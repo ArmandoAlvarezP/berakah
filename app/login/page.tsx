@@ -46,7 +46,7 @@ export default function LoginPage() {
                         id="curp" 
                         name="curp" 
                         placeholder="CURP"
-                        className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" 
+                        className="w-full border border-gray-300 rounded-3xl py-2 px-3 focus:outline-none focus:border-blue-500" 
                     />
                     </div>
 
@@ -63,7 +63,8 @@ export default function LoginPage() {
                 
                 {/* Marca de agua */}
                 <div className="flex justify-center">
-                    <span className="text-center text-gray-400 sm:mt-20 mt-20 text-xs"> &copy; {getYear} Berakah Consultoria para la Profesionalización SA de CV</span>
+                    <span className="text-center text-gray-400 sm:mt-20 mt-20 text-xs"> &copy; {getYear} Berakah Consultoria para la Profesionalización SA de CV
+                    </span>
                 </div>
 
             </div>
