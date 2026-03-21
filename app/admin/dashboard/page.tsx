@@ -2,16 +2,9 @@
 export default function AdminPage() {
     return (
         <>
-            {/* DATOS DEL ALUMNO */}
-
-            <div className="flex flex-col mx-15">
-                <h1 className="font-semibold text-[#10D4B3] uppercase text-3xl" >Nombre Apellido Apellido</h1>
-                <h2 className="font-medium text-[#10D4B3] uppercase text-xl">CURP</h2>
-            </div>
-
             {/*  Tabla  */}
 
-            <div className="m-10">
+            <div className="m-10 mt-0">
 
                 <table className="min-w-full border-collapse block md:table">
                     <thead className="block md:table-header-group">

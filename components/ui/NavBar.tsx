@@ -9,7 +9,7 @@ interface Props {
 
 export const NavBar = ({ title, welcome, extraButton }: Props) => {
     return (
-        <nav className=" grid grid-cols-2 sticky top-0 isolate mb-15">
+        <nav className=" grid grid-cols-2 sticky top-0 isolate mb-5">
             
             {/* Fondo */}
             <Image 
@@ -31,7 +31,7 @@ export const NavBar = ({ title, welcome, extraButton }: Props) => {
                     className="m-5 items"
                 />
 
-                <h1 className="m-10 mt-15 sm:mt-0 font-bold text-2xl sm:text-5xl text-[#00795D] uppercase w-3/4" >{ title }</h1>
+                <h1 className="m-10 ml-3 sm:ml-10 mt-15 sm:mt-0 font-bold text-2xl sm:text-5xl text-[#00795D] uppercase w-3/4" >{ title }</h1>
 
             </div>
 
@@ -83,10 +83,7 @@ export const NavBar = ({ title, welcome, extraButton }: Props) => {
                     }
 
                 </div>
-            </div>
-
-           
-                
+            </div>      
             
         </nav>
     )
