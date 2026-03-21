@@ -1,4 +1,4 @@
-import { NavBar } from '@/components';
+import { NavBar, Footer } from '@/components';
 
 export default function PerfilLayout({children}: 
     {children: React.ReactNode;}) {
@@ -6,6 +6,7 @@ export default function PerfilLayout({children}:
             <>
                 <NavBar />
                 {children}
+                <Footer />
             </>
         );
 }
