@@ -4,7 +4,7 @@ export default function PerfilLayout({children}:
     {children: React.ReactNode;}) {
         return (
             <>
-                <NavBar title='Historial de Certificaciones' welcome='Bienvenido nombre del alumno' />
+                <NavBar title='Directorio de Alumnos' welcome='Administrativo' extraButton/>
                 {children}
                 <Footer />
             </>
