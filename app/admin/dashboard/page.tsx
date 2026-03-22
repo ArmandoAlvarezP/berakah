@@ -1,5 +1,5 @@
 import { FaPlus, FaPlusCircle } from "react-icons/fa";
-import { IoTrashOutline } from "react-icons/io5";
+import { IoCloseOutline, IoTrashOutline } from "react-icons/io5";
 import { MdEdit } from "react-icons/md";
 
 export default function AdminPage() {
@@ -20,7 +20,7 @@ export default function AdminPage() {
                             <th className="bg-[#B1F5F6] p-2 font-bold md:border md:border-grey-500 text-left block md:table-cell">Institución Autorizada</th>
                             <th className="bg-[#B1F5F6] p-2 font-bold md:border md:border-grey-500 text-left block md:table-cell">Fecha de Emisión</th>
                             <th className="bg-[#B1F5F6] p-2 font-bold md:border md:border-grey-500 text-left block md:table-cell">Folio</th>
-                            <th className="bg-[#B1F5F6] p-2 font-bold md:border md:border-grey-500 text-left block md:table-cell">Acciones</th>
+                            {/* <th className="bg-[#B1F5F6] p-2 font-bold md:border md:border-grey-500 text-left block md:table-cell">Acciones</th> */}
                         </tr>
                     </thead>
                     <tbody className="block md:table-row-group">
@@ -29,7 +29,7 @@ export default function AdminPage() {
                                 <div className="flex flex-col">
                                     <span className="text-center">Julián Barrera</span>
                                     <div className="flex flex-row justify-center mt-5">
-                                        <MdEdit size={20} className="m-2 text-green-400 hover:text-green-600 cursor pointer"/>
+                                        <MdEdit size={20} className="m-2 text-green-400 hover:text-green-600 cursor-pointer"/>
                                         <IoTrashOutline size={20} className="m-2 text-red-400 hover:text-red-600 cursor-pointer"/>
                                     </div>
                                 </div>
@@ -37,15 +37,35 @@ export default function AdminPage() {
                             <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">CURP</span>AAPA940623HMNLR04</td>
                             <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Tipo de Certificación</span>
                             <div className="flex flex-col">
-                                    <ol>
+                                    <ol className='list-decimal'>
                                         <li className="ml-5 
-                                        list-decimal">Certificado de especialidad SEP</li>
+                                        "> 
+                                            <div className="flex items-center">
+                                                Certificado de especialidad SEP 
+                                                
+                                                <IoCloseOutline size={30} className="text-red-400 hover:text-red-600 cursor-pointer" />
+                                            </div>     
+                                        </li>
                                         <li className="ml-5 
-                                        list-decimal">Certificado de Especialización Profesional</li>
+                                        list-decimal">
+                                            <div className="flex items-center">
+                                                Certificado de especialidad SEP 
+                                                
+                                                <IoCloseOutline size={30} className="text-red-400 hover:text-red-600 cursor-pointer" />
+                                            </div>
+                                        </li>
                                         <li className="ml-5 
-                                        list-decimal">Instructor Capacitador SEP</li>
+                                        list-decimal">
+                                            <div className="flex items-center">
+                                                Certificado de especialidad SEP 
+                                                
+                                                <IoCloseOutline size={30} className="text-red-400 hover:text-red-600 cursor-pointer" />
+                                            </div>
+                                        </li>
                                     </ol>
-                                    <FaPlus size={20} className="ml-25 text-green-400 hover:text-green-600 cursor-pointer" />
+                                    <div className="flex flex-row justify-center mt-3">
+                                        <FaPlus size={20} className=" text-green-400 hover:text-green-600 cursor-pointer" />
+                                    </div>
                                 </div>
                             </td>
                             <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Especialidad</span>
@@ -107,7 +127,7 @@ export default function AdminPage() {
                                     </ol>
                                 </div>
                             </td>
-                            <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Acciones</span>
+                            {/* <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Acciones</span>
                                 <div className="flex flex-row">
                                     <ul>
                                         <li className="ml-5 text-green-500 underline cursor-pointer">Añadir Especialidad</li>
@@ -115,7 +135,7 @@ export default function AdminPage() {
                                         <li className="ml-5 text-red-500 underline cursor-pointer">Eliminar Alumno</li>
                                     </ul>
                                 </div>
-                            </td>
+                            </td> */}
                         </tr>
                         <tr className="border border-grey-500 md:border-none block md:table-row">
                             <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Alumno</span>Julián Barrera</td>
@@ -127,7 +147,7 @@ export default function AdminPage() {
                             <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Fecha de Emisión</span>
                             21/03/2026</td>
                             <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Folio</span>1234</td>
-                            <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Acciones</span>
+                            {/* <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Acciones</span>
                                 <div className="flex flex-row">
                                     <ul>
                                         <li className="text-green-500 underline cursor-pointer">Añadir Especialidad</li>
@@ -135,7 +155,7 @@ export default function AdminPage() {
                                         <li className="text-red-500 underline cursor-pointer">Eliminar Alumno</li>
                                     </ul>
                                 </div>
-                            </td>
+                            </td> */}
                         </tr>
                         <tr className="border border-grey-500 md:border-none block md:table-row">
                             <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Alumno</span>Julián Barrera</td>
@@ -147,7 +167,7 @@ export default function AdminPage() {
                             <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Fecha de Emisión</span>
                             21/03/2026</td>
                             <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Folio</span>1234</td>
-                            <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Acciones</span>
+                            {/* <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Acciones</span>
                                 <div className="flex flex-row">
                                     <ul>
                                         <li className="text-green-500 underline cursor-pointer">Añadir Especialidad</li>
@@ -155,7 +175,7 @@ export default function AdminPage() {
                                         <li className="text-red-500 underline cursor-pointer">Eliminar Alumno</li>
                                     </ul>
                                 </div>
-                            </td>
+                            </td> */}
                         </tr>
                         <tr className="border border-grey-500 md:border-none block md:table-row">
                             <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Alumno</span>Julián Barrera</td>
@@ -167,7 +187,7 @@ export default function AdminPage() {
                             <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Fecha de Emisión</span>
                             21/03/2026</td>
                             <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Folio</span>1234</td>
-                            <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Acciones</span>
+                            {/* <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Acciones</span>
                                 <div className="flex flex-row">
                                     <ul>
                                         <li className="text-green-500 underline cursor-pointer">Añadir Especialidad</li>
@@ -175,7 +195,7 @@ export default function AdminPage() {
                                         <li className="text-red-500 underline cursor-pointer">Eliminar Alumno</li>
                                     </ul>
                                 </div>
-                            </td>
+                            </td> */}
                         </tr>		
                     </tbody>
                 </table>
