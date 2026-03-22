@@ -67,7 +67,7 @@ export default function LoginPage() {
                 
                 {/* Marca de agua */}
                 <div className="flex justify-center">
-                    <span className="text-center text-gray-400 sm:mt-20 mt-20 text-xs"> &copy; {getYear} Berakah Consultoria para la Profesionalización SA de CV
+                    <span className="text-center text-gray-400 sm:mt-20 mt-20 text-[10px] sm:text-xs"> &copy; {getYear} Berakah Consultoria para la Profesionalización SA de CV
                     </span>
                 </div>
 
