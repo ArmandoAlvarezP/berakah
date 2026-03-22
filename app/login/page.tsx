@@ -24,7 +24,7 @@ export default function LoginPage() {
                 {/* Logo */}
                 <div className="flex flex-col justify-center items-center">
                     <Image 
-                        src={'/logo.jpeg'}
+                        src={'/logo.png'}
                         alt="logo"
                         width={200}
                         height={200}
@@ -53,10 +53,14 @@ export default function LoginPage() {
                     {/* <!-- Login Button --> */}
                     <div className="flex justify-center">
                         <button 
-                            type="submit" className="bg-yellow-600 hover:bg-yellow-700 shadow shadow-gray-400 text-white font-semibold rounded-3xl py-2 px-4 mt-10 w-1/2"
+                            type="submit" className="mt-10"
                         >
-                                Ingresar
-
+                                <Image 
+                                    src={'/Ingresar.png'}
+                                    alt='Ingresar'
+                                    width={170}
+                                    height={100}
+                                />
                         </button>
                     </div>
                 </form>

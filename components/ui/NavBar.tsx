@@ -18,17 +18,18 @@ export const NavBar = ({ title, welcome, extraButton }: Props) => {
                 className="absolute inset-0 -z-10 w-full object-cover object-right md:object-center h-70"
                 width={900}
                 height={500}
+                loading='eager'
             />
             <div className="flex flex-col justify-between">
 
                 {/* Logo */}
 
                 <Image
-                    src={'/logo.jpeg'}
+                    src={'/logo.png'}
                     alt="logo"
                     width={100}
                     height={100}
-                    className="m-5 items"
+                    className="m-5"
                 />
 
                 <h1 className="m-10 ml-3 sm:ml-10 mt-15 sm:mt-0 font-bold text-2xl sm:text-5xl text-[#00795D] uppercase w-3/4" >{ title }</h1>
