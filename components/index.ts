@@ -4,3 +4,5 @@ export * from './ui/tablas/alumnos/TablaAlumnos';
 export * from './ui/tablas/admin/TablaAdmin';
 export * from './ui/tablas/admin/TablaAdminItems';
 export * from './ui/modales/ModalAgregarAlumno';
+export * from './ui/modales/ModalAgregarCertificacion';
+export * from './ui/modales/ModalEditarAlumno';

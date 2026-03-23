@@ -4,10 +4,12 @@ import { useUIStore } from "@/store";
 import clsx from "clsx";
 import Image from "next/image"
 
-export const ModalAgregarAlumno = () => {
 
-    const isModalOpen = useUIStore( state => state.isModalAgregarAlumnoOpen );
-    const closeModal = useUIStore( state => state.closeModalAgregarAlumno );
+// TODO: Recibir id del alumno al que se agregará la certificación
+export const ModalAgregarCertificacion = () => {
+
+    const isModalOpen = useUIStore( state => state.isModalAgregarCertificacionOpen );
+    const closeModal = useUIStore( state => state.closeModalAgregarCertificacion );
 
     return (
         <div className={
@@ -20,10 +22,9 @@ export const ModalAgregarAlumno = () => {
             <div role="alert" className="container mx-auto w-11/12 md:w-2/3 max-w-lg">
                 <div className="relative py-8 px-5 md:px-10 bg-white shadow-md border border-gray-400 rounded-4xl">
                     <h1 className="text-[#00795D] text-3xl text-center font-bold tracking-normal leading-tight mb-4 uppercase">
-                        Agregar Alumno
+                        Agregar Certificación
                     </h1>
-                    <input id="nombre" name="nombre" type="text" className="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border" placeholder="NOMBRE COMPLETO" />
-                    <input id="curp" name="curp" type="text" className="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border" placeholder="CURP" />
+                    <h3 className="text-[#10D4B3] text-center font-semibold uppercase italic mb-5">Alumno: Nombre</h3>
                     <select id="tipo" name="tipo" className="mb-5 mt-2 text-gray-400 focus:outline-none focus:border focus:border-[#00795D] w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border uppercase">
                         <option value="">TIPO DE CERTIFICACIÓN</option>
                         <option value="1">
@@ -54,7 +55,7 @@ export const ModalAgregarAlumno = () => {
                         <button className="cursor-pointer">
 
                             <Image
-                                src={'/agregar_alumno.png'}
+                                src={'/agregar_certificacion.png'}
                                 alt="agregar"
                                 width={150}
                                 height={50}

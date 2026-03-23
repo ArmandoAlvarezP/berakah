@@ -1,8 +1,16 @@
+'use client';
+
+import { useUIStore } from "@/store";
 import { FaPlus } from "react-icons/fa"
 import { IoCloseOutline, IoTrashOutline } from "react-icons/io5"
 import { MdEdit } from "react-icons/md"
 
 export const TablaAdminItems = () => {
+
+    const openModalEditarAlumno = useUIStore( state => state.openModalEditarAlumno);
+
+    const openModalAgregarCertificacion = useUIStore( state => state.openModalAgregarCertificacion );
+
     return (
         <>
             <tr className="border border-grey-500 md:border-none block md:table-row">
@@ -10,7 +18,10 @@ export const TablaAdminItems = () => {
                     <div className="flex flex-row sm:flex-col">
                         <span className="sm:text-center text-2xl sm:text-base">Julián Barrera</span>
                         <div className="flex justify-center mt-0 ml-3 sm:mt-5 sm:ml-0">
-                            <MdEdit size={20} className="m-2 text-green-400 hover:text-green-600 cursor-pointer" />
+                            <MdEdit size={20} className="m-2 text-green-400 hover:text-green-600 cursor-pointer" 
+                            onClick={openModalEditarAlumno}
+                            //TODO: recibir id del alumno al abrir modal
+                            />
                             <IoTrashOutline size={20} className="m-2 text-red-400 hover:text-red-600 cursor-pointer" />
                         </div>
                     </div>
@@ -45,7 +56,9 @@ export const TablaAdminItems = () => {
                             </li>
                         </ol>
                         <div className="flex flex-row justify-center mt-3">
-                            <FaPlus size={20} className=" text-green-400 hover:text-green-600 cursor-pointer" />
+                            <FaPlus size={20} className=" text-green-400 hover:text-green-600 cursor-pointer" 
+                            onClick={openModalAgregarCertificacion}
+                            />
                         </div>
                     </div>
                 </td>

@@ -12,7 +12,7 @@ interface Props {
 
 export const NavBar = ({ title, welcome, extraButton }: Props) => {
 
-    const openModal = useUIStore( state => state.openModalAgregar );
+    const openModal = useUIStore( state => state.openModalAgregarAlumno );
 
     return (
         <nav className=" grid grid-cols-2 sticky top-0 isolate mb-5">
