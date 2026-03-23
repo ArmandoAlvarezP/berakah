@@ -5,11 +5,17 @@ import { FaPlus } from "react-icons/fa"
 import { IoCloseOutline, IoTrashOutline } from "react-icons/io5"
 import { MdEdit } from "react-icons/md"
 
+
+// TODO: Obtener aquí toda la info de alumnos y certificaciones necesarias opara enviar a los modales
 export const TablaAdminItems = () => {
 
     const openModalEditarAlumno = useUIStore( state => state.openModalEditarAlumno);
 
     const openModalAgregarCertificacion = useUIStore( state => state.openModalAgregarCertificacion );
+
+    const openBorrarAlumnoAlert = useUIStore( state => state.openBorrarAlumnoAlert );
+
+    const openBorrarCertificacionAlert = useUIStore( state => state.openBorrarCertificacionAlert );
 
     return (
         <>
@@ -22,7 +28,9 @@ export const TablaAdminItems = () => {
                             onClick={openModalEditarAlumno}
                             //TODO: recibir id del alumno al abrir modal
                             />
-                            <IoTrashOutline size={20} className="m-2 text-red-400 hover:text-red-600 cursor-pointer" />
+                            <IoTrashOutline size={20} className="m-2 text-red-400 hover:text-red-600 cursor-pointer" 
+                            onClick={ openBorrarAlumnoAlert }
+                            />
                         </div>
                     </div>
                 </td>
@@ -35,7 +43,9 @@ export const TablaAdminItems = () => {
                                 <div className="flex items-center">
                                     Certificado de especialidad SEP
 
-                                    <IoCloseOutline size={30} className="text-red-400 hover:text-red-600 cursor-pointer" />
+                                    <IoCloseOutline size={30}               className="text-red-400 hover:text-red-600 cursor-pointer" 
+                                    onClick={openBorrarCertificacionAlert}
+                                    />
                                 </div>
                             </li>
                             <li className="ml-5

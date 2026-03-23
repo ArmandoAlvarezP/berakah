@@ -1,5 +1,4 @@
-import { TablaAdmin, ModalAgregarAlumno, ModalAgregarCertificacion, ModalEditarAlumno } from "@/components";
-
+import { TablaAdmin, ModalAgregarAlumno, ModalAgregarCertificacion, ModalEditarAlumno, BorrarAlumnoAlert, BorrarCertificacionAlert } from "@/components";
 
 
 export default function AdminPage() {
@@ -26,7 +25,11 @@ export default function AdminPage() {
 
                 {/* Alert Eliminar Alumno */}
 
+                <BorrarAlumnoAlert />
+
                 {/* Alert Eliminar certificación */}
+
+                <BorrarCertificacionAlert />
 
             </div>
         </>

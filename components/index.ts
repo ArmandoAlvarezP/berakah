@@ -6,3 +6,5 @@ export * from './ui/tablas/admin/TablaAdminItems';
 export * from './ui/modales/ModalAgregarAlumno';
 export * from './ui/modales/ModalAgregarCertificacion';
 export * from './ui/modales/ModalEditarAlumno';
+export * from './ui/alerts/BorrarAlumnoAlert';
+export * from './ui/alerts/BorrarCertificacionAlert';

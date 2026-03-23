@@ -21,7 +21,7 @@ export const ModalEditarAlumno = () => {
         } id="modal">
             <div role="alert" className="container mx-auto w-11/12 md:w-2/3 max-w-lg">
                 <div className="relative py-8 px-5 md:px-10 bg-white shadow-md border border-gray-400 rounded-4xl">
-                    <h1 className="text-[#00795D] text-3xl text-center font-bold tracking-normal leading-tight mb-4 uppercase">
+                    <h1 className="text-[#00795D] text-lg text-center font-bold tracking-normal leading-tight mb-4 uppercase">
                         Editar Datos De Alumno
                     </h1>
 
@@ -51,8 +51,8 @@ export const ModalEditarAlumno = () => {
                         <Image
                             src={'/x_icon.png'}
                             alt="cerrar"
-                            width={30}
-                            height={30}
+                            width={25}
+                            height={25}
                         />
                     </button>
                 </div>

@@ -1,5 +1,5 @@
 
-import { create } from 'zustand'
+import { create } from 'zustand';
 
 interface State {
 
@@ -21,6 +21,20 @@ interface State {
 
     openModalAgregarCertificacion: () => void;
     closeModalAgregarCertificacion: () => void;
+
+    // Borrar Alumno 
+
+    isBorrarAlumnoAlertOpen: boolean;
+
+    openBorrarAlumnoAlert: () => void;
+    closeBorrarAlumnoAlert: () => void;
+
+    // Borrar Certificacion 
+
+    isBorrarCertificacionAlertOpen: boolean;
+
+    openBorrarCertificacionAlert: () => void;
+    closeBorrarCertificacionAlert: () => void;
 }
 
 export const useUIStore = create<State>()((set) => ({
@@ -42,4 +56,16 @@ export const useUIStore = create<State>()((set) => ({
 
     openModalAgregarCertificacion: () => set({ isModalAgregarCertificacionOpen: true }),
     closeModalAgregarCertificacion: () => set({ isModalAgregarCertificacionOpen: false }),
+
+    // Borrar alumno 
+    isBorrarAlumnoAlertOpen: false,
+
+    openBorrarAlumnoAlert: () => set({ isBorrarAlumnoAlertOpen: true }),
+    closeBorrarAlumnoAlert: () => set({ isBorrarAlumnoAlertOpen: false }),
+
+    // Borrar alumno 
+    isBorrarCertificacionAlertOpen: false,
+
+    openBorrarCertificacionAlert: () => set({ isBorrarCertificacionAlertOpen: true }),
+    closeBorrarCertificacionAlert: () => set({ isBorrarCertificacionAlertOpen: false }),
 }));

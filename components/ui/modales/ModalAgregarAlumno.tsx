@@ -19,7 +19,7 @@ export const ModalAgregarAlumno = () => {
         } id="modal">
             <div role="alert" className="container mx-auto w-11/12 md:w-2/3 max-w-lg">
                 <div className="relative py-8 px-5 md:px-10 bg-white shadow-md border border-gray-400 rounded-4xl">
-                    <h1 className="text-[#00795D] text-3xl text-center font-bold tracking-normal leading-tight mb-4 uppercase">
+                    <h1 className="text-[#00795D] text-lg text-center font-bold tracking-normal leading-tight mb-4 uppercase">
                         Agregar Alumno
                     </h1>
                     <input id="nombre" name="nombre" type="text" className="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border" placeholder="NOMBRE COMPLETO" />
@@ -72,8 +72,8 @@ export const ModalAgregarAlumno = () => {
                         <Image
                             src={'/x_icon.png'}
                             alt="cerrar"
-                            width={30}
-                            height={30}
+                            width={25}
+                            height={25}
                         />
                     </button>
                 </div>
