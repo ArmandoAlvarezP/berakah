@@ -12,7 +12,7 @@ export default function AdminPage() {
 
             {/* Modal agregar alumno */}
             
-            <ModalAgregarAlumno isOpen/>
+            <ModalAgregarAlumno />
             
             {/* <script>
                 let modal = document.getElementById("modal");

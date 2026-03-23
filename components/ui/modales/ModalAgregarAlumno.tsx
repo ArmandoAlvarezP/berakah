@@ -1,23 +1,19 @@
 'use client';
 
+import { useUIStore } from "@/store";
 import clsx from "clsx";
 import Image from "next/image"
-import { useState } from "react";
 
-interface Props {
-    isOpen: boolean;
-}
+export const ModalAgregarAlumno = () => {
 
-export const ModalAgregarAlumno = ({ isOpen }: Props) => {
-
-    const [openModal = isOpen, setOpenModal] = useState(true);
-
+    const isModalOpen = useUIStore( state => state.isModalAgregarOpen );
+    const closeModal = useUIStore( state => state.closeModalAgregar );
 
     return (
         <div className={
             clsx(
                 "items-center transition duration-150 ease-in-out z-10  fixed top-0 right-0 bottom-10 left-0 hidden", {
-                    "flex!" : openModal
+                    "flex!" : isModalOpen
                 }
             )
         } id="modal">
@@ -71,7 +67,7 @@ export const ModalAgregarAlumno = ({ isOpen }: Props) => {
                         className="cursor-pointer absolute top-0 right-0 mt-4 mr-5 duration-150 ease-in-out rounded focus:ring-2 focus:outline-none"
                         aria-label="close modal"
                         role="button"
-                        onClick={ () => setOpenModal(false) }
+                        onClick={ closeModal }
                     >
                         <Image
                             src={'/x_icon.png'}

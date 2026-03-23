@@ -1,5 +1,8 @@
+'use client';
+
 import Image from "next/image";
 import clsx from 'clsx';
+import { useUIStore } from "@/store";
 
 interface Props {
     title: string;
@@ -8,6 +11,9 @@ interface Props {
 }
 
 export const NavBar = ({ title, welcome, extraButton }: Props) => {
+
+    const openModal = useUIStore( state => state.openModalAgregar );
+
     return (
         <nav className=" grid grid-cols-2 sticky top-0 isolate mb-5">
             
@@ -67,18 +73,19 @@ export const NavBar = ({ title, welcome, extraButton }: Props) => {
                     {
                         extraButton && (
                             <Image 
-                            className={
-                                clsx(
-                                    "mb-20 mr-5 sm:ml-25 cursor-pointer",
-                                    {
-                                        "ml-20 sm:ml-15": extraButton
-                                    }
-                                )
-                            }   
-                            src={'/agregar_alumno.png'}
-                            alt="agregar alumno"
-                            width={150}
-                            height={30}
+                                className={
+                                    clsx(
+                                        "mb-20 mr-5 sm:ml-25 cursor-pointer",
+                                        {
+                                            "ml-20 sm:ml-15": extraButton
+                                        }
+                                    )
+                                }   
+                                src={'/agregar_alumno.png'}
+                                alt="agregar alumno"
+                                width={150}
+                                height={30}
+                                onClick={ openModal }
                             />
                         )
                     }
