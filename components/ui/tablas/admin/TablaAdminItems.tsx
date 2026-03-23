@@ -1,13 +1,17 @@
 'use client';
 
+import { initialData } from "@/seed/seed";
 import { useUIStore } from "@/store";
 import { FaPlus } from "react-icons/fa"
 import { IoCloseOutline, IoTrashOutline } from "react-icons/io5"
 import { MdEdit } from "react-icons/md"
 
-
 // TODO: Obtener aquí toda la info de alumnos y certificaciones necesarias opara enviar a los modales
 export const TablaAdminItems = () => {
+
+    // Obtención de datos 
+    const {alumnos, certificaciones} = initialData;
+    console.log({alumnos, certificaciones});
 
     const openModalEditarAlumno = useUIStore( state => state.openModalEditarAlumno);
 
