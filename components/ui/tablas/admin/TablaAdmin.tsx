@@ -1,7 +1,12 @@
-import { TablaAdminItems } from './TablaAdminItems';
+import { Alumno } from '@/interfaces';
+import { TablaAdminItem } from './TablaAdminItem';
 
+interface Props {
+    alumnos: Alumno[]
+}
 
-export const TablaAdmin = () => {
+export const TablaAdmin = ({alumnos} : Props) => {
+
     return (
         <table className="border-collapse block md:table">
             <thead className="block relative md:table-header-group -z-50">
@@ -18,7 +23,14 @@ export const TablaAdmin = () => {
                 </tr>
             </thead>
             <tbody className="block md:table-row-group">
-                <TablaAdminItems />
+                {
+                    alumnos.map ( (alumno) => (
+                        <TablaAdminItem 
+                            key={ alumno.id }
+                            alumno={ alumno } 
+                        />
+                    ) )
+                }
             </tbody>
         </table>
 

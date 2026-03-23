@@ -3,11 +3,14 @@ import bcryptjs from 'bcryptjs';
 // Habra 3 tablas : { alumnos, certificaciones, usuario(admin) }
 
 interface SeedAlumno {
+    id: string;
     nombre: string;
     curp: string;
+    certificaciones: string[]; // Array de folios de certificaciones relacionadas
 }
 
 interface SeedCertificacion {
+    id: string;
     tipo: TipoValido;
     especialidad: string;
     emisora: string;
@@ -34,25 +37,34 @@ export const initialData : SeedData = {
 
     alumnos: [
         {
+            id: '1',
             nombre: 'Julian Barrera Tafolla',
-            curp: 'AAPA940623HMNLRR04'
+            curp: 'CURP1',
+            certificaciones: ['1234', '5678'] // Folios de certificaciones relacionadas
         },
         {
+            id: '2',
             nombre: 'Adriana Tafolla Pérez',
-            curp: 'AAPA940623HMNLRR04'
+            curp: 'CURP2',
+            certificaciones: ['1234'] // Ejemplo: solo una certificación
         },
         {
+            id: '3',
             nombre: 'Armando Alvarez Pérez',
-            curp: 'AAPA940623HMNLRR04'
+            curp: 'AAPA940623HMNLRR04',
+            certificaciones: ['5678', '9101'] // Varias certificaciones
         },
         {
+            id: '4',
             nombre: 'Axel Daniel Alvarez Pérez',
-            curp: 'AAPA940623HMNLRR04'
+            curp: 'CURP4',
+            certificaciones: ['5678', '9101', '1234'] // Sin certificaciones por ahora
         },
     ],
 
     certificaciones: [
         {
+            id: 'cert1',
             tipo: 'DIPLOMA CERTIFICADO DE ESPECIALIDAD SEP',
             especialidad: 'Mecatrónica',
             emisora: 'Berakah',
@@ -61,36 +73,40 @@ export const initialData : SeedData = {
             folio: '1234'
         },
         {
+            id: 'cert2',
             tipo: 'DIPLOMA CERTIFICADO DE ESPECIALIDAD',
             especialidad: 'Cosmetología',
             emisora: 'Berakah',
             autorizada: 'Berakah',
             fechaEmision: new Date(),
-            folio: '1234'
+            folio: '5678'
         },
         {
+            id: 'cert3',
             tipo: 'INSTRUCTOR CAPACITADOR SEP',
             especialidad: 'Sistemas',
             emisora: 'Berakah',
             autorizada: 'Berakah',
             fechaEmision: new Date(),
-            folio: '1234'
+            folio: '9101'
         },
         {
+            id: 'cert4',
             tipo: 'CERTIFICADO DE ACREDITACIÓN BCPP',
             especialidad: 'Diseño',
             emisora: 'Berakah',
             autorizada: 'Berakah',
             fechaEmision: new Date(),
-            folio: '1234'
+            folio: '1121'
         },
         {
+            id: 'cert5',
             tipo: 'CERTIFICADO DE ESPECIALIZACIÓN PROFESIONAL',
             especialidad: 'Barbería',
             emisora: 'Berakah',
             autorizada: 'Berakah',
             fechaEmision: new Date(),
-            folio: '1234'
+            folio: '3141'
         },
     ],
 

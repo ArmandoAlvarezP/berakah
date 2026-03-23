@@ -1,0 +1,173 @@
+'use client';
+
+import { useUIStore } from "@/store";
+import { FaPlus } from "react-icons/fa"
+import { IoCloseOutline, IoTrashOutline } from "react-icons/io5"
+import { MdEdit } from "react-icons/md"
+import { Alumno } from '@/interfaces';
+import { initialData } from "@/seed/seed";
+
+// TODO: Obtener aquí toda la info de alumnos y certificaciones necesarias opara enviar a los modales
+
+interface Props {
+    alumno: Alumno;
+}
+
+export const TablaAdminItem = ({alumno}: Props) => {
+
+    // Obtención de datos de certificaciones de los alumnos
+
+    const { certificaciones: cert } = initialData;
+
+    const certificaciones = alumno.certificaciones.map( folio => (
+        cert.find( c => c.folio === folio)
+    ))
+
+
+    // console.log(certificaciones);
+
+    const openModalEditarAlumno = useUIStore( state => state.openModalEditarAlumno);
+
+    const openModalAgregarCertificacion = useUIStore( state => state.openModalAgregarCertificacion );
+
+    const openBorrarAlumnoAlert = useUIStore( state => state.openBorrarAlumnoAlert );
+
+    const openBorrarCertificacionAlert = useUIStore( state => state.openBorrarCertificacionAlert );
+
+    return (
+        <>
+            <tr className="border border-grey-500 md:border-none block md:table-row">
+                <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Nombre</span>
+                    <div className="flex flex-row sm:flex-col">
+                        <span className="sm:text-center text-2xl sm:text-base">{alumno.nombre}</span>
+                        <div className="flex justify-center mt-0 ml-3 sm:mt-5 sm:ml-0">
+                            <MdEdit size={20} className="m-2 text-green-400 hover:text-green-600 cursor-pointer" 
+                            onClick={openModalEditarAlumno}
+                            //TODO: recibir id del alumno al abrir modal
+                            />
+                            <IoTrashOutline size={20} className="m-2 text-red-400 hover:text-red-600 cursor-pointer" 
+                            onClick={ openBorrarAlumnoAlert }
+                            />
+                        </div>
+                    </div>
+                </td>
+                <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">CURP</span>{alumno.curp}</td>
+                <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-full md:hidden font-bold mr-2 sm:mr-0">Tipo de Certificación</span>
+                    <div className="flex flex-col">
+
+                        {/* // TODO: hacer map de las certificaciones */}
+                        <ol className='list-decimal'>
+                            {
+                                certificaciones.map( (c,i) => (
+                                    <li 
+                                    className="ml-5 mb-3"
+                                    key={i}         
+                                    >
+                                        <div className="flex items-center">
+                                            {c?.tipo}
+
+                                            <IoCloseOutline size={30}               className="text-red-400 hover:text-red-600 cursor-pointer" 
+                                            onClick={openBorrarCertificacionAlert}
+                                            />
+                                        </div>
+                                    </li>
+                                ) )
+                            }
+                            
+                        </ol>
+                        <div className="flex flex-row justify-center mt-3">
+                            <FaPlus size={20} className=" text-green-400 hover:text-green-600 cursor-pointer" 
+                            onClick={openModalAgregarCertificacion}
+                            />
+                        </div>
+                    </div>
+                </td>
+                <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Especialidad</span>
+                    <div className="flex flex-row">
+                        <ol>
+                            {
+                                certificaciones.map(( c,i ) => (
+                                    <li 
+                                        key={i}
+                                        className="ml-5 list-decimal"
+                                    >
+                                        {c?.especialidad}
+                                    </li> 
+                                ))
+                            }                                             
+                        </ol>
+                    </div>
+                </td>
+                <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-full md:hidden font-bold mr-2 sm:mr-0">Institución Emisora</span>
+                    <div className="flex flex-row">
+                        <ol>
+                            {
+                                certificaciones.map(( c,i ) => (
+                                    <li 
+                                        key={i}
+                                        className="ml-5 list-decimal"
+                                    >
+                                        {c?.emisora}
+                                    </li> 
+                                ))
+                            }                                                 
+                        </ol>
+                    </div>
+                </td>
+                <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-full md:hidden font-bold mr-2 sm:mr-0">Institución Autorizada</span>
+                    <div className="flex flex-row">
+                        <ol>
+                            {
+                                certificaciones.map(( c,i ) => (
+                                    <li 
+                                        key={i}
+                                        className="ml-5 list-decimal"
+                                    >
+                                        {c?.autorizada}
+                                    </li> 
+                                ))
+                            }                          
+                        </ol>
+                    </div>
+                </td>
+                <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-full md:hidden font-bold mr-2 sm:mr-0">Fecha de Emisión</span>
+                    <div className="flex flex-row">
+                        <ol>
+                            {
+                                certificaciones.map(( c,i ) => (
+                                    <li 
+                                        key={i}
+                                        className="ml-5 list-decimal"
+                                    >
+                                        {c?.fechaEmision.toLocaleDateString('es-mx')}
+                                    </li> 
+                                ))
+                            }                             
+                        </ol>
+                    </div>
+                </td>
+                <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+                    <span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Folio</span>
+                    <div className="flex flex-row">
+                        {/* // TODO: hacer map para los folios  */}
+                        <ol>
+                            {
+                                certificaciones.map(( c,i ) => (
+                                    <li 
+                                        key={i}
+                                        className="ml-5 list-decimal"
+                                    >
+                                        {c?.folio}
+                                    </li> 
+                                ))
+                            }  
+                        </ol>
+                    </div>
+                </td>
+            </tr>    
+        </>
+    )
+}
+
+
+// className="bg-[#E6FCFC] 
