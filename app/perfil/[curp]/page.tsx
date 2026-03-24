@@ -1,20 +1,29 @@
-import { TablaAlumnos } from '@/components';
+import { TablaAlumnos, DatosAlumnos } from '@/components';
 
-export default function PerfilPage() {
+interface Props {
+    params: Promise<string>
+}
+
+// const { alumnos } = initialData;
+
+export default async function PerfilPage({ params }: Props) {
+
+
+    const curp = await params;
+    // LLamar aquí el server action para obterner el curp 
+
+
     return (
         <>
             {/* DATOS DEL ALUMNO */}
 
-            <div className="flex flex-col ml-2 sm:ml-15 sm:mt-10">
-                <h1 className="font-semibold text-[#10D4B3] uppercase text-3xl" >Nombre Apellido Apellido</h1>
-                <h2 className="font-medium text-[#10D4B3] uppercase text-xl mt-5">CURP</h2>
-            </div>
+            <DatosAlumnos curp={Object.values(curp).toString()}/>
 
             {/*  Tabla  */}
 
             <div className="m-10">
                 
-                <TablaAlumnos />
+                <TablaAlumnos curp={Object.values(curp).toString()}/>
 
             </div>
         </>

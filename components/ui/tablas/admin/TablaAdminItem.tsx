@@ -6,14 +6,16 @@ import { IoCloseOutline, IoTrashOutline } from "react-icons/io5"
 import { MdEdit } from "react-icons/md"
 import { Alumno } from '@/interfaces';
 import { initialData } from "@/seed/seed";
+import clsx from "clsx";
 
 // TODO: Obtener aquí toda la info de alumnos y certificaciones necesarias opara enviar a los modales
 
 interface Props {
     alumno: Alumno;
+    index: number;
 }
 
-export const TablaAdminItem = ({alumno}: Props) => {
+export const TablaAdminItem = ({alumno, index}: Props) => {
 
     // Obtención de datos de certificaciones de los alumnos
 
@@ -36,7 +38,16 @@ export const TablaAdminItem = ({alumno}: Props) => {
 
     return (
         <>
-            <tr className="border border-grey-500 md:border-none block md:table-row">
+            <tr 
+                className={
+                    clsx(
+                        "border border-grey-500 md:border-none block md:table-row",
+                        {
+                            "bg-[#E6FCFC]" : (index +1) % 2 === 0
+                        }
+                    )
+                }
+            >
                 <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Nombre</span>
                     <div className="flex flex-row sm:flex-col">
                         <span className="sm:text-center text-2xl sm:text-base">{alumno.nombre}</span>

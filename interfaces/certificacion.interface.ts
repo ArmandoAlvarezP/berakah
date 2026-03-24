@@ -1,5 +1,5 @@
 export interface Certificacion {
-    // id: string;
+    id: string;
     tipo: TipoValido;
     especialidad: string;
     emisora: string;

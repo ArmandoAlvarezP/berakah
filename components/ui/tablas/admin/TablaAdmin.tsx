@@ -30,10 +30,11 @@ export const TablaAdmin = ({alumnos} : Props) => {
                         </thead>
                         <tbody className="block md:table-row-group">
                             {
-                                alumnos.map ( (alumno) => (
+                                alumnos.map ( (alumno, index) => (
                                     <TablaAdminItem 
-                                    key={ alumno.id }
-                                    alumno={ alumno } 
+                                        key={ alumno.id }
+                                        alumno={ alumno } 
+                                        index={index}
                                     />
                                 ) )
                             }
