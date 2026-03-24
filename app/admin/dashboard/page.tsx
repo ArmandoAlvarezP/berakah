@@ -1,12 +1,12 @@
+import { getAlumnos, getCertificaciones } from "@/actions";
 import { TablaAdmin, ModalAgregarAlumno, ModalAgregarCertificacion, ModalEditarAlumno, BorrarAlumnoAlert, BorrarCertificacionAlert } from "@/components";
-import { initialData } from "@/seed/seed";
 
 
-export default function AdminPage() {
+export default async function AdminPage() {
 
-    const { alumnos } = initialData;
+    const alumnos = await getAlumnos();
 
-    // console.log({...data});
+    const certificaciones = await getCertificaciones();
 
     return (
         <>
@@ -14,7 +14,7 @@ export default function AdminPage() {
 
             <div className="mx-5 mt-0 mb-10 w-auto">
 
-                <TablaAdmin  alumnos={alumnos} />
+                <TablaAdmin  alumnos={alumnos} certificaciones={certificaciones}/>
 
                 {/* Modal agregar alumno */}
                 

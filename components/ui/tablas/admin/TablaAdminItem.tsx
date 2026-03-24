@@ -4,29 +4,22 @@ import { useUIStore } from "@/store";
 import { FaPlus } from "react-icons/fa"
 import { IoCloseOutline, IoTrashOutline } from "react-icons/io5"
 import { MdEdit } from "react-icons/md"
-import { Alumno } from '@/interfaces';
-import { initialData } from "@/seed/seed";
+import { Alumno, Certificacion } from '@/interfaces';
 import clsx from "clsx";
 
 // TODO: Obtener aquí toda la info de alumnos y certificaciones necesarias opara enviar a los modales
 
 interface Props {
     alumno: Alumno;
+    certificaciones: Certificacion[];
     index: number;
 }
 
-export const TablaAdminItem = ({alumno, index}: Props) => {
-
-    // Obtención de datos de certificaciones de los alumnos
-
-    const { certificaciones: cert } = initialData;
-
-    const certificaciones = alumno.certificaciones.map( folio => (
-        cert.find( c => c.folio === folio)
-    ))
+export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
 
 
-    // console.log(certificaciones);
+    const certificacionesPorAlumno = certificaciones.filter( certificacion => certificacion.alumnoId === alumno.id);
+
 
     const openModalEditarAlumno = useUIStore( state => state.openModalEditarAlumno);
 
@@ -69,7 +62,7 @@ export const TablaAdminItem = ({alumno, index}: Props) => {
                         {/* // TODO: hacer map de las certificaciones */}
                         <ol className='list-decimal'>
                             {
-                                certificaciones.map( (c,i) => (
+                                certificacionesPorAlumno.map( (c,i) => (
                                     <li 
                                     className="ml-5 mb-3"
                                     key={i}         
@@ -97,7 +90,7 @@ export const TablaAdminItem = ({alumno, index}: Props) => {
                     <div className="flex flex-row">
                         <ol>
                             {
-                                certificaciones.map(( c,i ) => (
+                                certificacionesPorAlumno.map(( c,i ) => (
                                     <li 
                                         key={i}
                                         className="ml-5 list-decimal"
@@ -113,7 +106,7 @@ export const TablaAdminItem = ({alumno, index}: Props) => {
                     <div className="flex flex-row">
                         <ol>
                             {
-                                certificaciones.map(( c,i ) => (
+                                certificacionesPorAlumno.map(( c,i ) => (
                                     <li 
                                         key={i}
                                         className="ml-5 list-decimal"
@@ -129,7 +122,7 @@ export const TablaAdminItem = ({alumno, index}: Props) => {
                     <div className="flex flex-row">
                         <ol>
                             {
-                                certificaciones.map(( c,i ) => (
+                                certificacionesPorAlumno.map(( c,i ) => (
                                     <li 
                                         key={i}
                                         className="ml-5 list-decimal"
@@ -145,7 +138,7 @@ export const TablaAdminItem = ({alumno, index}: Props) => {
                     <div className="flex flex-row">
                         <ol>
                             {
-                                certificaciones.map(( c,i ) => (
+                                certificacionesPorAlumno.map(( c,i ) => (
                                     <li 
                                         key={i}
                                         className="ml-5 list-decimal"
@@ -163,7 +156,7 @@ export const TablaAdminItem = ({alumno, index}: Props) => {
                         {/* // TODO: hacer map para los folios  */}
                         <ol>
                             {
-                                certificaciones.map(( c,i ) => (
+                                certificacionesPorAlumno.map(( c,i ) => (
                                     <li 
                                         key={i}
                                         className="ml-5 list-decimal"
@@ -179,6 +172,5 @@ export const TablaAdminItem = ({alumno, index}: Props) => {
         </>
     )
 }
-
 
 // className="bg-[#E6FCFC] 

@@ -6,7 +6,7 @@ interface Curp {
     curp: string;
 }
 
-export const getCertifications = async ({ curp }: Curp) => {
+export const getCertificacionesByCurp = async ({ curp }: Curp) => {
 
     try {
 

@@ -1,4 +1,4 @@
-import { getCertifications } from '@/actions/get-certifications';
+import { getCertificacionesByCurp } from '@/actions/get-certificaciones-by-curp';
 import { TablaAlumnosItem } from './TablaAlumnosItem';
 import { notFound } from 'next/navigation';
 
@@ -20,7 +20,7 @@ export const TablaAlumnos = async ( { curp }: Props) => {
 
     
 
-    const { alumno ,certificaciones } = await getCertifications({curp})
+    const { alumno ,certificaciones } = await getCertificacionesByCurp({curp})
 
     if ( !alumno ) {
         notFound();

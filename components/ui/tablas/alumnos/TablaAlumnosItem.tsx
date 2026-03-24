@@ -24,7 +24,7 @@ export const TablaAlumnosItem = ({certificacion, index}: Props) => {
                     <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Institución Emisora</span>{certificacion.emisora}</td>
                     <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Institución Autorizada</span>{certificacion.autorizada}</td>
                     <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Fecha de Emisión</span>
-                    { certificacion.fechaEmision.toLocaleString('es-mx') }</td>
+                    { certificacion.fechaEmision.toLocaleDateString('es-mx') }</td>
                     <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Folio</span>{certificacion.folio}</td>
             </tr>     
         </>

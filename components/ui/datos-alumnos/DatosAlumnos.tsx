@@ -1,4 +1,4 @@
-import { getCertifications } from "@/actions/get-certifications";
+import { getCertificacionesByCurp } from "@/actions/get-certificaciones-by-curp";
 
 interface Props {
     curp: string;
@@ -6,7 +6,7 @@ interface Props {
 
 export const DatosAlumnos = async ({ curp }: Props) => {
 
-    const { alumno } = await getCertifications({curp})
+    const { alumno } = await getCertificacionesByCurp({curp})
 
     if( !alumno ) return;
 

@@ -1,13 +1,16 @@
-import { Alumno } from '@/interfaces';
+import { Alumno, Certificacion } from '@/interfaces';
 import { TablaAdminItem } from './TablaAdminItem';
+// import { getCertificacionesById } from '@/actions';
 
 interface Props {
-    alumnos: Alumno[]
+    alumnos: Alumno[];
+    certificaciones: Certificacion[];
 }
 
-export const TablaAdmin = ({alumnos} : Props) => {
+export const TablaAdmin = async ({alumnos, certificaciones} : Props) => {
 
     const hayAlumnos: boolean = alumnos.length > 0;
+
 
     return (
         <>
@@ -34,6 +37,7 @@ export const TablaAdmin = ({alumnos} : Props) => {
                                     <TablaAdminItem 
                                         key={ alumno.id }
                                         alumno={ alumno } 
+                                        certificaciones={ certificaciones }
                                         index={index}
                                     />
                                 ) )

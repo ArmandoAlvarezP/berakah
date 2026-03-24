@@ -1,5 +1,5 @@
 export interface Alumno {
-    id: string;
+    id: number;
     nombre: string;
     curp: string;
     // certificaciones: string[];
