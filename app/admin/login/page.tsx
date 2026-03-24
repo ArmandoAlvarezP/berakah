@@ -10,10 +10,10 @@ export default function AdminLoginPage() {
 
                  {/* Capa de color sobre la imágen */}
 
-                    <div className="fixed top-0 left-0 w-1/2 h-screen z-10 bg-pink-400 opacity-50"/>
+                    {/* <div className="fixed top-0 left-0 w-1/2 h-screen z-10 bg-pink-400 opacity-50"/> */}
 
                     <Image 
-                        src="/login-administrativo.avif" alt="Estudiantes" className="object-cover w-full h-full"
+                        src="/index_admin.jpg" alt="Estudiantes" className="object-cover w-full h-full"
                         height={400}
                         width={600}
                     />
