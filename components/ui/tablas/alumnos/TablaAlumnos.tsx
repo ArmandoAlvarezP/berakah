@@ -1,25 +1,30 @@
+import { getCertifications } from '@/actions/get-certifications';
 import { TablaAlumnosItem } from './TablaAlumnosItem';
-import { initialData } from '@/seed/seed';
-import { Certificacion } from '@/interfaces';
 import { notFound } from 'next/navigation';
 
 interface Props {
     curp: string;
 }
 
-export const TablaAlumnos = ({ curp }: Props) => {
+export const TablaAlumnos = async ( { curp }: Props) => {
 
-    const {alumnos, certificaciones: cert} = initialData;
+    // const {alumnos, certificaciones: cert} = initialData;
 
-    const alumno = alumnos.find( a => a.curp === curp )
+    // const alumno = alumnos.find( a => a.curp === curp )
     
+
+
+    // const certificaciones = alumno.certificaciones.map( folio => (
+    //     cert.find( c => c.folio === folio) 
+    // )).filter(Boolean) as Certificacion[];
+
+    
+
+    const { alumno ,certificaciones } = await getCertifications({curp})
+
     if ( !alumno ) {
         notFound();
     }
-
-    const certificaciones = alumno.certificaciones.map( folio => (
-        cert.find( c => c.folio === folio) 
-    )).filter(Boolean) as Certificacion[];
 
     const hayCertificaciones: boolean = certificaciones.length > 0
 

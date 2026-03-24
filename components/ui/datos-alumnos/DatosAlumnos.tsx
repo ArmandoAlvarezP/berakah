@@ -1,15 +1,12 @@
-import { initialData } from "@/seed/seed"
+import { getCertifications } from "@/actions/get-certifications";
 
 interface Props {
     curp: string;
 }
 
-export const DatosAlumnos = ({ curp }: Props) => {
+export const DatosAlumnos = async ({ curp }: Props) => {
 
-    const { alumnos } = initialData;
-
-    const alumno = alumnos.find( a => a.curp === curp );
-
+    const { alumno } = await getCertifications({curp})
 
     if( !alumno ) return;
 
