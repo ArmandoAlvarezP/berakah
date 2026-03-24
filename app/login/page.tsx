@@ -1,5 +1,6 @@
 import { getYear } from "@/utils";
 import Image from "next/image";
+import { LoginForm } from './components/LoginForm';
 
 export default function LoginPage() {
 
@@ -37,33 +38,8 @@ export default function LoginPage() {
 
                 <span className="flex justify-center mt-2 mb-10 font-semibold text-gray-400">Acceso Estudiantil</span>
 
-                <form >
-                    {/* <!-- CURP --> */}
-                    <div className="mb-4">
-                    <label className="block text-gray-400 font-bold mb-2">USUARIO</label>
-                    <input 
-                        type="text" 
-                        id="curp" 
-                        name="curp" 
-                        placeholder="CURP"
-                        className="w-full border border-gray-300 rounded-3xl py-2 px-3 focus:outline-none focus:border-blue-500" 
-                    />
-                    </div>
-
-                    {/* <!-- Login Button --> */}
-                    <div className="flex justify-center">
-                        <button 
-                            type="submit" className="mt-10"
-                        >
-                                <Image 
-                                    src={'/Ingresar.png'}
-                                    alt='Ingresar'
-                                    width={170}
-                                    height={100}
-                                />
-                        </button>
-                    </div>
-                </form>
+                {/* Form */}
+                <LoginForm />
                 
                 {/* Marca de agua */}
                 <div className="flex justify-center">

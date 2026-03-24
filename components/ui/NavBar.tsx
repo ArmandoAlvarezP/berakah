@@ -3,6 +3,7 @@
 import Image from "next/image";
 import clsx from 'clsx';
 import { useUIStore } from "@/store";
+import { redirect } from "next/navigation";
 
 interface Props {
     title: string;
@@ -13,6 +14,10 @@ interface Props {
 export const NavBar = ({ title, welcome, extraButton }: Props) => {
 
     const openModal = useUIStore( state => state.openModalAgregarAlumno );
+
+    const cerrarSesion = () => {
+        redirect('/login');
+    }
 
     return (
         <nav className=" grid grid-cols-2 sticky top-0 isolate mb-5">
@@ -68,6 +73,7 @@ export const NavBar = ({ title, welcome, extraButton }: Props) => {
                         alt="cerrar sesión"
                         width={150}
                         height={30}
+                        onClick={cerrarSesion}
                     />
 
                     {
