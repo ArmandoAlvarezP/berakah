@@ -58,7 +58,13 @@ export const initialData : SeedData = {
             id: '4',
             nombre: 'Axel Daniel Alvarez Pérez',
             curp: 'CURP4',
-            certificaciones: ['5678', '9101', '1234'] // Sin certificaciones por ahora
+            certificaciones: ['5678', '9101', '1234'] 
+        },
+        {
+            id: '5',
+            nombre: 'Daniel Alvarez Pérez',
+            curp: 'CURP5',
+            certificaciones: [] // Sin certificaciones por ahora
         },
     ],
 
