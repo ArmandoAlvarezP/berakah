@@ -26,8 +26,6 @@ export const ModalAgregarAlumno = () => {
 
     // Manejo de Formulario 
 
-    const errorSpan = document.getElementById('error') as HTMLSpanElement;
-
     const [errorMessage, setErrorMessage] = useState('');
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm<Inputs>();
@@ -50,7 +48,7 @@ export const ModalAgregarAlumno = () => {
             setErrorMessage(resp!.message);
             setTimeout(() => {
                 setErrorMessage('')
-            }, 3000);
+            }, 5000);
             return;
         }
 

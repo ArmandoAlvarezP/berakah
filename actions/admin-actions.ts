@@ -38,12 +38,16 @@ export const agregarAlumno = async( nombre:string, curp:string, tipo:string, fec
     } catch (error: unknown) {
         if( error instanceof Error ) {
             console.log(error.message);
-            if( error.message.includes('Unique constraint failed on the fields:') ) {
+            if( error.message.includes('curp') ) {
                 return {
                     ok: false,
-                    message: 'El Alumno o Folio ya existe'
-                }
-            } else {
+                    message: 'Esa CURP ya está registrada'
+                } } else if ( error.message.includes('folio') ){
+                    return {
+                        ok: false,
+                        message: 'Ese Folio ya está registrado'
+                    }
+                } else {
                 return {
                     ok: false,
                     message: 'Error agregando Alumno'
