@@ -1,14 +1,34 @@
 'use client';
 
+import { borrarAlumno } from "@/actions";
+import { Alumno } from "@/interfaces";
 import { useUIStore } from "@/store";
 import clsx from "clsx"
 import Image from "next/image";
 import { FaTrashCan } from "react-icons/fa6"
 
-// TODO: Recibir los datos del alumno a borrar 
-export const BorrarAlumnoAlert = () => {
+interface Props {
+    alumnos: Alumno[];
+}
 
-    const { isBorrarAlumnoAlertOpen, closeBorrarAlumnoAlert } = useUIStore();
+// TODO: Recibir los datos del alumno a borrar 
+export const BorrarAlumnoAlert = ({alumnos}: Props) => {
+
+
+    const { isBorrarAlumnoAlertOpen, closeBorrarAlumnoAlert, id } = useUIStore();
+
+    const alumno = alumnos.filter( a => (
+        a.id === id
+    ))
+
+    const nombre = alumno[0]?.nombre;
+
+    const onAccept = async() => {
+        // Server Action 
+        await borrarAlumno(alumno[0]?.id);
+
+        closeBorrarAlumnoAlert();
+    }
 
     return (
             <div 
@@ -29,12 +49,13 @@ export const BorrarAlumnoAlert = () => {
                         
                         <div className="text-center p-5 flex-auto justify-center">
                             <FaTrashCan size={50} className="flex justify-self-center items-center text-red-600" />
-                            <h1 className="text-xl font-bold text-gray-500 px-8 mt-3 uppercase">¿Está seguro de eliminar al alumno: nombre?</h1>
+                            <h1 className="text-xl font-bold text-gray-500 px-8 mt-3 uppercase">¿Está seguro de eliminar al alumno: {nombre}?</h1>
                         </div>
                         
                         <div className="p-3  mt-2 text-center space-x-4 md:block ">
                             <button className="mb-2 md:mb-0 cursor-pointer">
                                 <Image 
+                                    onClick={onAccept}
                                     src={'/si.png'}
                                     alt="si"
                                     width={150}

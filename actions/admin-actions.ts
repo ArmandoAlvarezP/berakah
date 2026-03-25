@@ -169,7 +169,33 @@ export const borrarCertificacion = async ( id: string ) => {
 
     } catch (error) {
         console.log(error);
-        throw new Error('Error al aliminar Certificación');
+        throw new Error('Error al eliminar Certificación');
+    }
+
+}
+
+// Eliminar Alumno 
+
+export const borrarAlumno = async ( id: number ) => {
+
+    try {
+        
+        await prisma.alumno.delete({
+            where: {
+                id
+            }
+        })
+
+        revalidatePath('/admin/dashboard');
+
+        return {
+            ok: true,
+            message: 'Alumno eliminado'
+        }
+
+    } catch (error) {
+        console.log(error);
+        throw new Error('Error al eliminar Alumno');
     }
 
 }

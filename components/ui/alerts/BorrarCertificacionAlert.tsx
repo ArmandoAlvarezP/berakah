@@ -34,7 +34,9 @@ export const BorrarCertificacionAlert = ({ certificaciones, alumnos }: Props) =>
 
     // Server Action 
     const onAccept = async () => {
+        // Server Action
         await borrarCertificacion(certificacion[0]?.id);
+        
         closeBorrarCertificacionAlert();
     }
 

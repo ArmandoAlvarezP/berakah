@@ -1,7 +1,5 @@
 import { getAlumnos, getCertificaciones } from "@/actions";
 import { TablaAdmin, ModalAgregarAlumno, ModalAgregarCertificacion, ModalEditarAlumno, BorrarAlumnoAlert, BorrarCertificacionAlert } from "@/components";
-import { Certificacion } from '../../generated/prisma/browser';
-
 
 export default async function AdminPage() {
 
@@ -33,7 +31,7 @@ export default async function AdminPage() {
 
                 {/* Alert Eliminar Alumno */}
 
-                <BorrarAlumnoAlert />
+                <BorrarAlumnoAlert alumnos={alumnos}/>
 
                 {/* Alert Eliminar certificación */}
 

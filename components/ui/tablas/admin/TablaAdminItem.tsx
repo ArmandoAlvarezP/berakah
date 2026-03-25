@@ -56,6 +56,13 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
         openBorrarCertificacionAlert();
     }
 
+    // Borrar Alumno 
+
+    const onOpenBorrarAlumnoAlert = ( id: number ) => {
+        setId(id);
+        openBorrarAlumnoAlert();
+    }
+
 
     return (
         <>
@@ -78,7 +85,7 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
                             //TODO: recibir id del alumno al abrir modal
                             />
                             <IoTrashOutline size={20} className="m-2 text-red-400 hover:text-red-600 cursor-pointer" 
-                            onClick={ openBorrarAlumnoAlert }
+                            onClick={ () => onOpenBorrarAlumnoAlert(id) }
                             />
                         </div>
                     </div>
