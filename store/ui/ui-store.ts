@@ -17,6 +17,11 @@ interface State {
 
     // Agregar Certificacion
 
+    id: number;
+
+    setId: (newId: number) => void;
+    clearId: () => void;
+
     isModalAgregarCertificacionOpen: boolean;
 
     openModalAgregarCertificacion: () => void;
@@ -52,9 +57,15 @@ export const useUIStore = create<State>()((set) => ({
     closeModalEditarAlumno: () => set({ isModalEditarAlumnoOpen: false }),
 
     // Agregar Certificacion
+
+    id: 0,
+
+    setId: (newId) => set({id: newId}),
+    clearId: () => set({ id: 0}),
+
     isModalAgregarCertificacionOpen : false,
 
-    openModalAgregarCertificacion: () => set({ isModalAgregarCertificacionOpen: true }),
+    openModalAgregarCertificacion: () => set({ isModalAgregarCertificacionOpen: true,  }),
     closeModalAgregarCertificacion: () => set({ isModalAgregarCertificacionOpen: false }),
 
     // Borrar alumno 

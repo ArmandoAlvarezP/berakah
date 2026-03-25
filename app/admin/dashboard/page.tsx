@@ -7,6 +7,7 @@ export default async function AdminPage() {
     const alumnos = await getAlumnos();
 
     const certificaciones = await getCertificaciones();
+    
 
     return (
         <>
@@ -27,7 +28,7 @@ export default async function AdminPage() {
 
                 {/* Modal agregar Certificación */}
 
-                <ModalAgregarCertificacion />
+                <ModalAgregarCertificacion alumnos={alumnos}/>
 
                 {/* Alert Eliminar Alumno */}
 

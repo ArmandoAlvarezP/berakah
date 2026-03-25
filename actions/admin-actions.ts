@@ -56,6 +56,48 @@ export const agregarAlumno = async( nombre:string, curp:string, tipo:string, fec
         }
         
     }
+}
 
+// Agregar Certificación 
 
+export const agregarCertificacion = async(id:number, tipo:string, fechaEmision:Date, especialidad:string, emisora:string, autorizada: string, folio:string ) => {
+
+    try {
+        
+        await prisma.certificacion.create({
+            data: {
+                tipo,
+                fechaEmision: new Date(fechaEmision).toISOString(),
+                especialidad,
+                emisora,
+                autorizada,
+                folio,
+                alumnoId: id
+            }
+        }) 
+
+        revalidatePath('/admin/dashboard');
+        
+        return {
+            ok: true,
+            message: 'Certificación agregada'
+        }
+
+    } catch (error: unknown) {
+        if( error instanceof Error ) {
+            console.log(error.message);
+            if ( error.message.includes('folio') ){
+                    return {
+                        ok: false,
+                        message: 'Ese Folio ya está registrado'
+                    }
+                } else {
+                return {
+                    ok: false,
+                    message: 'Error agregando Certificación'
+                }
+            }
+        }
+        
+    }
 }

@@ -17,6 +17,7 @@ interface Props {
 
 export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
 
+    const { id } = alumno;
 
     const certificacionesPorAlumno = certificaciones.filter( certificacion => certificacion.alumnoId === alumno.id);
 
@@ -25,9 +26,16 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
 
     const openModalAgregarCertificacion = useUIStore( state => state.openModalAgregarCertificacion );
 
+    const setId = useUIStore( state => state.setId );
+
     const openBorrarAlumnoAlert = useUIStore( state => state.openBorrarAlumnoAlert );
 
     const openBorrarCertificacionAlert = useUIStore( state => state.openBorrarCertificacionAlert );
+
+    const onOpenModalAgregarCertificacion = (id: number) => {
+        setId(id);
+        openModalAgregarCertificacion();
+    }
 
     return (
         <>
@@ -81,7 +89,7 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
                         </ol>
                         <div className="flex flex-row justify-center mt-3">
                             <FaPlus size={20} className=" text-green-400 hover:text-green-600 cursor-pointer" 
-                            onClick={openModalAgregarCertificacion}
+                            onClick={() => onOpenModalAgregarCertificacion(id)}
                             />
                         </div>
                     </div>
