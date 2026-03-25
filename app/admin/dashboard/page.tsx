@@ -24,7 +24,7 @@ export default async function AdminPage() {
 
                 {/* Modal Editar Alumno */}
 
-                <ModalEditarAlumno />
+                <ModalEditarAlumno alumnos={alumnos}/>
 
                 {/* Modal agregar Certificación */}
 

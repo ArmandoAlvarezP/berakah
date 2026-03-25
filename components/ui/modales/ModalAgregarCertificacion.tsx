@@ -64,6 +64,7 @@ export const ModalAgregarCertificacion = ({alumnos}: Props) => {
             reset();
         };
     
+        // if( !alumno ) return;
 
     return (
         <form 
@@ -82,12 +83,12 @@ export const ModalAgregarCertificacion = ({alumnos}: Props) => {
                     <h1 className="text-[#00795D] text-lg text-center font-bold tracking-normal leading-tight mb-4 uppercase">
                         Agregar Certificación
                     </h1>
-                    <h3 className="text-[#10D4B3] text-center font-semibold uppercase italic mb-5">{alumno[0].nombre}</h3>
+                    <h3 className="text-[#10D4B3] text-center font-semibold uppercase italic mb-5">{alumno[0]?.nombre}</h3>
                     <select 
                         id="tipo" 
                         className={
                             clsx(
-                                "mb-5 mt-2 text-gray-400 focus:outline-none focus:border focus:border-[#00795D] w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border uppercase",
+                                "mb-5 mt-2 text-gray-800 focus:outline-none focus:border focus:border-[#00795D] w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border uppercase",
                                 {
                                     "border-red-600": errors.tipo
                                 }
@@ -119,7 +120,7 @@ export const ModalAgregarCertificacion = ({alumnos}: Props) => {
                     <input 
                         id="fecha" type="date" className={
                             clsx(
-                                "mb-5 mt-2 text-gray-400 focus:outline-none focus:border focus:border-[#00795D] w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border uppercase",
+                                "mb-5 mt-2 text-gray-800 focus:outline-none focus:border focus:border-[#00795D] w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border uppercase",
                                 {
                                     "border-red-600": errors.tipo
                                 }
@@ -131,7 +132,7 @@ export const ModalAgregarCertificacion = ({alumnos}: Props) => {
                     <input 
                         id="especialidad" type="text" className={
                             clsx(
-                                "mb-5 mt-2 text-gray-400 focus:outline-none focus:border focus:border-[#00795D] w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border uppercase",
+                                "mb-5 mt-2 text-gray-800 focus:outline-none focus:border focus:border-[#00795D] w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border uppercase",
                                 {
                                     "border-red-600": errors.tipo
                                 }
@@ -143,7 +144,7 @@ export const ModalAgregarCertificacion = ({alumnos}: Props) => {
                     <input 
                         id="instEm" type="text" className={
                             clsx(
-                                "mb-5 mt-2 text-gray-400 focus:outline-none focus:border focus:border-[#00795D] w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border uppercase",
+                                "mb-5 mt-2 text-gray-800 focus:outline-none focus:border focus:border-[#00795D] w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border uppercase",
                                 {
                                     "border-red-600": errors.tipo
                                 }
@@ -155,7 +156,7 @@ export const ModalAgregarCertificacion = ({alumnos}: Props) => {
                     <input 
                         id="instAut" type="text" className={
                             clsx(
-                                "mb-5 mt-2 text-gray-400 focus:outline-none focus:border focus:border-[#00795D] w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border uppercase",
+                                "mb-5 mt-2 text-gray-800 focus:outline-none focus:border focus:border-[#00795D] w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border uppercase",
                                 {
                                     "border-red-600": errors.tipo
                                 }
@@ -167,7 +168,7 @@ export const ModalAgregarCertificacion = ({alumnos}: Props) => {
                     <input 
                         id="folio" type="text" className={
                             clsx(
-                                "mb-5 mt-2 text-gray-400 focus:outline-none focus:border focus:border-[#00795D] w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border uppercase",
+                                "mb-5 mt-2 text-gray-800 focus:outline-none focus:border focus:border-[#00795D] w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border uppercase",
                                 {
                                     "border-red-600": errors.tipo
                                 }

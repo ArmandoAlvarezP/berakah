@@ -37,6 +37,12 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
         openModalAgregarCertificacion();
     }
 
+    const onOpenModalEditarAlumno = (id: number) => {
+        setId(id);
+        openModalEditarAlumno();
+    }
+
+
     return (
         <>
             <tr 
@@ -54,7 +60,7 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
                         <span className="sm:text-center text-2xl sm:text-base">{alumno.nombre}</span>
                         <div className="flex justify-center mt-0 ml-3 sm:mt-5 sm:ml-0">
                             <MdEdit size={20} className="m-2 text-green-400 hover:text-green-600 cursor-pointer" 
-                            onClick={openModalEditarAlumno}
+                            onClick={() => onOpenModalEditarAlumno(id)}
                             //TODO: recibir id del alumno al abrir modal
                             />
                             <IoTrashOutline size={20} className="m-2 text-red-400 hover:text-red-600 cursor-pointer" 

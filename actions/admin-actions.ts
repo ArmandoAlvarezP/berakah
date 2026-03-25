@@ -12,7 +12,7 @@ export const agregarAlumno = async( nombre:string, curp:string, tipo:string, fec
         await prisma.alumno.create({
             data: {
                 nombre,
-                curp,
+                curp: curp.toUpperCase(),
                 certificaciones: {
                     create: [
                         {
@@ -77,7 +77,7 @@ export const agregarCertificacion = async(id:number, tipo:string, fechaEmision:D
         }) 
 
         revalidatePath('/admin/dashboard');
-        
+
         return {
             ok: true,
             message: 'Certificación agregada'
@@ -95,6 +95,52 @@ export const agregarCertificacion = async(id:number, tipo:string, fechaEmision:D
                 return {
                     ok: false,
                     message: 'Error agregando Certificación'
+                }
+            }
+        }
+        
+    }
+}
+
+// Editar Alumno
+
+export const editarAlumno = async(id:number, nombre: string, curp: string) => {
+
+    try {
+        
+        await prisma.alumno.upsert({
+            where: {
+                id
+            },
+            update: {
+                nombre,
+                curp: curp.toUpperCase()
+            }, 
+            create: {
+                nombre, 
+                curp: curp.toUpperCase()
+            }
+        })
+
+        revalidatePath('/admin/dashboard');
+
+        return {
+            ok: true,
+            message: 'Cambios guardados'
+        }
+
+    } catch (error: unknown) {
+        if( error instanceof Error ) {
+            // console.log(error.message);
+            if ( error.message.includes('curp') ){
+                    return {
+                        ok: false,
+                        message: 'Esa Curp ya está registrada'
+                    }
+                } else {
+                return {
+                    ok: false,
+                    message: 'Error Guardando los cambios'
                 }
             }
         }

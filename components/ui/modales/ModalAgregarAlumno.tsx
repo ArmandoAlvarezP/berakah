@@ -80,7 +80,7 @@ export const ModalAgregarAlumno = () => {
                         id="nombre" type="text"
                         className={
                             clsx(
-                                "mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
+                                "mb-5 mt-2 text-gray-800 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
                                 { "border-red-600": errors.nombre }
                             )
                         }
@@ -91,7 +91,7 @@ export const ModalAgregarAlumno = () => {
                     <input
                         id="curp" type="text" className={
                             clsx(
-                                "mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
+                                "mb-5 mt-2 text-gray-800 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
                                 { "border-red-600": errors.curp }
                             )
                         } placeholder="CURP"
@@ -101,7 +101,7 @@ export const ModalAgregarAlumno = () => {
                     <select
                         id="tipo" className={
                             clsx(
-                                "mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
+                                "mb-5 mt-2 text-gray-800 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
                                 { "border-red-600": errors.tipo }
                             )
                         }
@@ -132,7 +132,7 @@ export const ModalAgregarAlumno = () => {
                     <input
                         id="fecha" type="date" className={
                             clsx(
-                                "mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
+                                "mb-5 mt-2 text-gray-800 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
                                 { "border-red-600": errors.fechaEmision }
                             )
                         }
@@ -142,7 +142,7 @@ export const ModalAgregarAlumno = () => {
                     <input
                         id="especialidad" type="text" className={
                             clsx(
-                                "mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
+                                "mb-5 mt-2 text-gray-800 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
                                 { "border-red-600": errors.especialidad }
                             )
                         } placeholder="ESPECIALIDAD"
@@ -152,7 +152,7 @@ export const ModalAgregarAlumno = () => {
                     <input
                         id="instEm" type="text" className={
                             clsx(
-                                "mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
+                                "mb-5 mt-2 text-gray-800 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
                                 { "border-red-600": errors.emisora }
                             )
                         } placeholder="INSTITUCIÓN EMISORA"
@@ -162,7 +162,7 @@ export const ModalAgregarAlumno = () => {
                     <input
                         id="instAut" type="text" className={
                             clsx(
-                                "mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
+                                "mb-5 mt-2 text-gray-800 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
                                 { "border-red-600": errors.autorizada }
                             )
                         } placeholder="INSTITUCIÓN AUTORIZADA"
@@ -172,7 +172,7 @@ export const ModalAgregarAlumno = () => {
                     <input
                         id="folio" type="text" className={
                             clsx(
-                                "mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
+                                "mb-5 mt-2 text-gray-800 focus:outline-none focus:border focus:border-[#00795D] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded-3xl border",
                                 { "border-red-600": errors.folio }
                             )
                         } placeholder="FOLIO"
