@@ -1,14 +1,42 @@
 'use client';
 
+import { borrarCertificacion } from "@/actions";
+import { Alumno, Certificacion } from "@/interfaces";
 import { useUIStore } from "@/store";
 import clsx from "clsx"
 import Image from "next/image";
 import { FaTrashCan } from "react-icons/fa6"
 
-// TODO: Recibir los datos de la certificación a borrar 
-export const BorrarCertificacionAlert = () => {
+interface Props {
+    certificaciones: Certificacion[]
+    alumnos: Alumno[]
+}
 
-    const { isBorrarCertificacionAlertOpen, closeBorrarCertificacionAlert } = useUIStore();
+// TODO: Recibir los datos de la certificación a borrar 
+export const BorrarCertificacionAlert = ({ certificaciones, alumnos }: Props) => {
+
+    
+
+    const { isBorrarCertificacionAlertOpen, closeBorrarCertificacionAlert, idCert } = useUIStore();
+
+
+    const certificacion = certificaciones.filter( cert => (
+        cert.id === idCert
+    ));
+
+    const especialidad = certificacion[0]?.especialidad;
+
+    const alumno = alumnos.filter( a => (
+        a.id === certificacion[0]?.alumnoId
+    ));
+
+    const nombre = alumno[0]?.nombre;
+
+    // Server Action 
+    const onAccept = async () => {
+        await borrarCertificacion(certificacion[0]?.id);
+        closeBorrarCertificacionAlert();
+    }
 
     return (
             <div 
@@ -29,11 +57,15 @@ export const BorrarCertificacionAlert = () => {
                         
                         <div className="text-center p-5 flex-auto justify-center">
                             <FaTrashCan size={50} className="flex justify-self-center items-center text-red-600" />
-                            <h1 className="text-xl font-bold text-gray-500 px-8 mt-3 uppercase">¿Está seguro de eliminar la certificación: especialidad, del alumno: nombre?</h1>
+                            <h1 className="text-xl font-bold text-gray-500 px-8 mt-3 uppercase">
+                                {`¿Está seguro de eliminar la certificación: ${especialidad}, del alumno: ${nombre}?`}
+                            </h1>
                         </div>
                         
                         <div className="p-3  mt-2 text-center space-x-4 md:block ">
-                            <button className="mb-2 md:mb-0 cursor-pointer">
+                            <button 
+                                onClick={onAccept}
+                                className="mb-2 md:mb-0 cursor-pointer">
                                 <Image 
                                     src={'/si.png'}
                                     alt="si"

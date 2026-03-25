@@ -62,7 +62,7 @@ export const ModalEditarAlumno = ({alumnos}: Props) => {
                     return;
                 }
         
-                console.log(resp);
+                // console.log(resp);
                 closeModal();
                 reset();
                 clearId();

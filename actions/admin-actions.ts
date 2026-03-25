@@ -147,3 +147,29 @@ export const editarAlumno = async(id:number, nombre: string, curp: string) => {
         
     }
 }
+
+// Eliminar Certificación 
+
+export const borrarCertificacion = async ( id: string ) => {
+
+    try {
+        
+        await prisma.certificacion.delete({
+            where: {
+                id
+            }
+        })
+
+        revalidatePath('/admin/dashboard');
+
+        return {
+            ok: true,
+            message: 'Certificación eliminada'
+        }
+
+    } catch (error) {
+        console.log(error);
+        throw new Error('Error al aliminar Certificación');
+    }
+
+}

@@ -36,6 +36,11 @@ interface State {
 
     // Borrar Certificacion 
 
+    idCert: string;
+
+    setIdCert: ( newIdCert: string ) => void;
+    clearIdCert: () => void;
+
     isBorrarCertificacionAlertOpen: boolean;
 
     openBorrarCertificacionAlert: () => void;
@@ -68,13 +73,19 @@ export const useUIStore = create<State>()((set) => ({
     openModalAgregarCertificacion: () => set({ isModalAgregarCertificacionOpen: true,  }),
     closeModalAgregarCertificacion: () => set({ isModalAgregarCertificacionOpen: false }),
 
-    // Borrar alumno 
+    // Borrar Alumno 
     isBorrarAlumnoAlertOpen: false,
 
     openBorrarAlumnoAlert: () => set({ isBorrarAlumnoAlertOpen: true }),
     closeBorrarAlumnoAlert: () => set({ isBorrarAlumnoAlertOpen: false }),
 
-    // Borrar alumno 
+    // Borrar Certificación 
+
+    idCert: '',
+
+    setIdCert: (newIdCert) => set({ idCert: newIdCert }),
+    clearIdCert: () => set({idCert: ''}),
+
     isBorrarCertificacionAlertOpen: false,
 
     openBorrarCertificacionAlert: () => set({ isBorrarCertificacionAlertOpen: true }),

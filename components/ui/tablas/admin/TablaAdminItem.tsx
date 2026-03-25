@@ -22,15 +22,20 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
     const certificacionesPorAlumno = certificaciones.filter( certificacion => certificacion.alumnoId === alumno.id);
 
 
+
+
     const openModalEditarAlumno = useUIStore( state => state.openModalEditarAlumno);
 
     const openModalAgregarCertificacion = useUIStore( state => state.openModalAgregarCertificacion );
 
-    const setId = useUIStore( state => state.setId );
 
     const openBorrarAlumnoAlert = useUIStore( state => state.openBorrarAlumnoAlert );
 
     const openBorrarCertificacionAlert = useUIStore( state => state.openBorrarCertificacionAlert );
+
+    // Agregar certificación y editar alumno
+
+    const setId = useUIStore( state => state.setId );
 
     const onOpenModalAgregarCertificacion = (id: number) => {
         setId(id);
@@ -40,6 +45,15 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
     const onOpenModalEditarAlumno = (id: number) => {
         setId(id);
         openModalEditarAlumno();
+    }
+
+    // Borrar certificación
+
+    const setIdCert = useUIStore( state => state.setIdCert );
+
+    const onOpenBorrarCertificacionAlert = ( id: string ) => {
+        setIdCert(id);
+        openBorrarCertificacionAlert();
     }
 
 
@@ -85,7 +99,7 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
                                             {c?.tipo}
 
                                             <IoCloseOutline size={30}               className="text-red-400 hover:text-red-600 cursor-pointer min-w-7.5 min-h-7.5" 
-                                            onClick={openBorrarCertificacionAlert}
+                                            onClick={() => onOpenBorrarCertificacionAlert(certificacionesPorAlumno[i].id)}
                                             />
                                         </div>
                                     </li>
