@@ -67,10 +67,10 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
                                     className="ml-5 mb-3"
                                     key={i}         
                                     >
-                                        <div className="flex items-center">
+                                        <div className="flex justify-between">
                                             {c?.tipo}
 
-                                            <IoCloseOutline size={30}               className="text-red-400 hover:text-red-600 cursor-pointer" 
+                                            <IoCloseOutline size={30}               className="text-red-400 hover:text-red-600 cursor-pointer min-w-7.5 min-h-7.5" 
                                             onClick={openBorrarCertificacionAlert}
                                             />
                                         </div>

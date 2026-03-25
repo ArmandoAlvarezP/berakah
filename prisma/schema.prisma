@@ -13,7 +13,7 @@ enum Role {
 
 model Alumno {
   id     Int    @id @default(autoincrement())
-  nombre String @unique
+  nombre String //TODO: Quitar unique al nombre
   curp   String @unique
 
   // Relaciones 
