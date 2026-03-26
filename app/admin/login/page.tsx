@@ -5,21 +5,7 @@ import { LoginForm } from './components/LoginForm';
 export default function AdminLoginPage() {
 
     return (
-        <div className="bg-white flex justify-center items-center h-screen">
-            {/* <!-- Left: Image --> */}
-                <div className="w-1/2 h-screen hidden lg:block">
-
-                 {/* Capa de color sobre la imágen */}
-
-                    {/* <div className="fixed top-0 left-0 w-1/2 h-screen z-10 bg-pink-400 opacity-50"/> */}
-
-                    <Image 
-                        src="/index_admin.jpg" alt="Estudiantes" className="object-cover w-full h-full"
-                        height={400}
-                        width={600}
-                    />
-                </div>
-            
+        <>
             {/* <!-- Right: Login Form --> */}
             <div className="lg:p-36 md:p-52 sm:p-20 p-8 w-full lg:w-1/2 sm:h-screen">
                 {/* Logo */}
@@ -47,6 +33,6 @@ export default function AdminLoginPage() {
                 </div>
 
             </div>
-        </div>
+        </>
     );
 }

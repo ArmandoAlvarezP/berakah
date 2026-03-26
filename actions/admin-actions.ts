@@ -85,7 +85,7 @@ export const agregarCertificacion = async(id:number, tipo:string, fechaEmision:D
 
     } catch (error: unknown) {
         if( error instanceof Error ) {
-            console.log(error.message);
+            // console.log(error.message);
             if ( error.message.includes('folio') ){
                     return {
                         ok: false,
