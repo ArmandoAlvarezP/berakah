@@ -7,8 +7,6 @@ export default async function PerfilLayout({children}:
 
         const session = await auth();
 
-        console.log(session);
-
         if( !session?.user ) {
             redirect('/admin/login');
         }
