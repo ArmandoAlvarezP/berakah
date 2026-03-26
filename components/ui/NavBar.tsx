@@ -49,7 +49,7 @@ export const NavBar = ({ title, welcome, extraButton }: Props) => {
                     className="m-5"
                 />
 
-                <h1 className="m-10 ml-3 sm:ml-10 mt-15 sm:mt-0 font-bold text-2xl sm:text-5xl text-[#00795D] uppercase w-3/4" >{ title }</h1>
+                <h1 className="m-10 ml-3 sm:ml-10 mt-25 sm:mt-0 font-bold text-lg sm:text-5xl text-[#00795D] uppercase w-3/4" >{ title }</h1>
 
             </div>
 
