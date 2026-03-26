@@ -1,5 +1,6 @@
 import { getYear } from "@/utils";
 import Image from "next/image";
+import { LoginForm } from './components/LoginForm';
 
 export default function AdminLoginPage() {
 
@@ -37,45 +38,11 @@ export default function AdminLoginPage() {
 
                 <span className="flex justify-center mt-2 mb-10 font-semibold text-gray-400">Panel Administrativo</span>
 
-                <form >
-                    {/* <!-- Usuario y Contraseña --> */}
-                    <div className="mb-4">
-                        <input 
-                            type="text" 
-                            id="user" 
-                            name="user" 
-                            placeholder="USUARIO"
-                            className="w-full border border-gray-300 py-2 px-3 focus:outline-none focus:border-blue-500 mb-5 rounded-3xl" 
-                        />
-
-                        <input 
-                            type="password" 
-                            id="password" 
-                            name="password" 
-                            placeholder="CONTRASEÑA"
-                            className="w-full border border-gray-300 rounded-3xl py-2 px-3 focus:outline-none focus:border-blue-500" 
-                        />
-                    </div>
-
-                    {/* <!-- Login Button --> */}
-                    <div className="flex justify-center">
-                        <button 
-                            type="submit" className="mt-10"
-                        >
-                                <Image 
-                                    src={'/Ingresar.png'}
-                                    alt='Ingresar'
-                                    width={170}
-                                    height={100}
-                                />
-
-                        </button>
-                    </div>
-                </form>
+                <LoginForm />
                 
                 {/* Marca de agua */}
                 <div className="flex justify-center">
-                    <span className="text-center text-gray-400 sm:mt-20 mt-20 text-[10px] sm:text-xs"> &copy; {getYear} Berakah Consultoria para la Profesionalización SA de CV
+                    <span className="text-center text-gray-400 sm:mt-10 mt-20 text-[10px] sm:text-xs"> &copy; {getYear} Berakah Consultoria para la Profesionalización SA de CV
                     </span>
                 </div>
 

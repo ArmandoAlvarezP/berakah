@@ -4,6 +4,8 @@ import Image from "next/image";
 import clsx from 'clsx';
 import { useUIStore } from "@/store";
 import { redirect } from "next/navigation";
+// import { auth } from "@/auth.config";
+import { logout } from "@/actions";
 
 interface Props {
     title: string;
@@ -15,8 +17,12 @@ export const NavBar = ({ title, welcome, extraButton }: Props) => {
 
     const openModal = useUIStore( state => state.openModalAgregarAlumno );
 
-    const cerrarSesion = () => {
-        redirect('/login');
+    const cerrarSesion = async () => {   
+        if( window.location.href.includes('perfil') ){
+            redirect('/login');
+        }
+        await logout();
+        redirect('/admin/login');
     }
 
     return (
@@ -73,7 +79,7 @@ export const NavBar = ({ title, welcome, extraButton }: Props) => {
                         alt="cerrar sesión"
                         width={150}
                         height={30}
-                        onClick={cerrarSesion}
+                        onClick={() => cerrarSesion()}
                     />
 
                     {
