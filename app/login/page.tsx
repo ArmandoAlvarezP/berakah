@@ -25,7 +25,7 @@ export default function LoginPage() {
                 {/* Logo */}
                 <div className="flex flex-col justify-center items-center">
                     <Image 
-                        src={'/logo.png'}
+                        src={'/LOGO.png'}
                         alt="logo"
                         width={200}
                         height={200}

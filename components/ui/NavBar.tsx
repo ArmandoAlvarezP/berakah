@@ -42,7 +42,7 @@ export const NavBar = ({ title, welcome, extraButton }: Props) => {
                 {/* Logo */}
 
                 <Image
-                    src={'/logo.png'}
+                    src={'/LOGO.png'}
                     alt="logo"
                     width={100}
                     height={100}
