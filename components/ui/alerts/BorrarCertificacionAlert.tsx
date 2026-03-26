@@ -64,7 +64,7 @@ export const BorrarCertificacionAlert = ({ certificaciones, alumnos }: Props) =>
                             </h1>
                         </div>
                         
-                        <div className="p-3  mt-2 text-center space-x-4 md:block ">
+                        <div className="flex justify-between p-3  mt-2 text-center space-x-4 md:block ">
                             <button 
                                 onClick={onAccept}
                                 className="mb-2 md:mb-0 cursor-pointer">
