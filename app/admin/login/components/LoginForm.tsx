@@ -75,7 +75,14 @@ function LoginButton() {
     return (
         <button
             type="submit" 
-            className="mt-10 cursor-pointer"
+            className={
+                clsx(
+                    "mt-10 cursor-pointer",
+                    {
+                        "disabled": pending
+                    }
+                )
+            }
         >
             <Image
                 src={'/Ingresar.png'}
