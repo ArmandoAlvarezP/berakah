@@ -1,15 +1,10 @@
 import { prisma } from '@/app/lib/prisma';
 import { NavBar, Footer } from '@/components';
 
-interface Props {
-    children: React.ReactNode;
-    params: Promise<string>
-}
+type Params = Promise<{curp:string}>
 
-
-export default async function PerfilLayout({children, params}: Props) {
-        
-
+export default async function PerfilLayout({children, params}: {children: React.ReactNode, params: Params}) {
+    
     const curp = await params;
     // LLamar aquí el server action para obterner el curp 
 
