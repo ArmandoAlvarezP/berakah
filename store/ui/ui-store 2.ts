@@ -1,0 +1,71 @@
+
+import { create } from 'zustand';
+
+interface State {
+
+    //Agregar Alumno
+    isModalAgregarAlumnoOpen: boolean;
+
+    openModalAgregarAlumno: () => void;
+    closeModalAgregarAlumno: () => void;
+
+    // Editar Alumno
+    isModalEditarAlumnoOpen: boolean;
+
+    openModalEditarAlumno: () => void;
+    closeModalEditarAlumno: () => void;
+
+    // Agregar Certificacion
+
+    isModalAgregarCertificacionOpen: boolean;
+
+    openModalAgregarCertificacion: () => void;
+    closeModalAgregarCertificacion: () => void;
+
+    // Borrar Alumno 
+
+    isBorrarAlumnoAlertOpen: boolean;
+
+    openBorrarAlumnoAlert: () => void;
+    closeBorrarAlumnoAlert: () => void;
+
+    // Borrar Certificacion 
+
+    isBorrarCertificacionAlertOpen: boolean;
+
+    openBorrarCertificacionAlert: () => void;
+    closeBorrarCertificacionAlert: () => void;
+}
+
+export const useUIStore = create<State>()((set) => ({
+
+    // Agregar Alumno
+    isModalAgregarAlumnoOpen: false,
+
+    openModalAgregarAlumno: () => set({ isModalAgregarAlumnoOpen: true }),
+    closeModalAgregarAlumno: () => set({ isModalAgregarAlumnoOpen: false }),
+
+    // Editar Alumno
+    isModalEditarAlumnoOpen: false,
+
+    openModalEditarAlumno: () => set({ isModalEditarAlumnoOpen: true }),
+    closeModalEditarAlumno: () => set({ isModalEditarAlumnoOpen: false }),
+
+    // Agregar Certificacion
+    isModalAgregarCertificacionOpen : false,
+
+    openModalAgregarCertificacion: () => set({ isModalAgregarCertificacionOpen: true }),
+    closeModalAgregarCertificacion: () => set({ isModalAgregarCertificacionOpen: false }),
+
+    // Borrar alumno 
+    isBorrarAlumnoAlertOpen: false,
+
+    openBorrarAlumnoAlert: () => set({ isBorrarAlumnoAlertOpen: true }),
+    closeBorrarAlumnoAlert: () => set({ isBorrarAlumnoAlertOpen: false }),
+
+    // Borrar alumno 
+    isBorrarCertificacionAlertOpen: false,
+
+    openBorrarCertificacionAlert: () => set({ isBorrarCertificacionAlertOpen: true }),
+    closeBorrarCertificacionAlert: () => set({ isBorrarCertificacionAlertOpen: false }),
+}));
