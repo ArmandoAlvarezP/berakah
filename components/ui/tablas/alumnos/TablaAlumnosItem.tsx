@@ -19,13 +19,70 @@ export const TablaAlumnosItem = ({certificacion, index}: Props) => {
                     }
                 )
             }>
-                    <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Tipo de Documento</span>{certificacion.tipo}</td>
-                    <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Especialidad / Curso</span>{certificacion.especialidad}</td>
-                    <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Institución Emisora</span>{certificacion.emisora}</td>
-                    <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Institución Autorizada</span>{certificacion.autorizada}</td>
-                    <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Fecha de Emisión</span>
-                    { certificacion.fechaEmision.toLocaleDateString('es-mx') }</td>
-                    <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Folio</span>{certificacion.folio}</td>
+                    <td className="grid grid-cols-1 p-2 md:border md:border-grey-500 text-left md:table-cell">
+                        <div className="flex flex-row items-center">
+                            <span className="inline-block w-1/3 md:hidden font-bold mr-10 sm:mr-0"
+                            >
+                                Tipo de Documento
+                            </span>
+                            <span className="inline-block ml-5 sm:ml-0">      {certificacion.tipo}
+                            </span>
+                        </div>
+                        <hr className="my-3 md:hidden"/>
+                    </td>
+                    <td className="grid grid-cols-1 p-2 md:border md:border-grey-500 text-left md:table-cell">
+                        <div className="flex flex-row items-center">
+                            <span className="inline-block w-1/3 md:hidden font-bold mr-10 sm:mr-0">
+                                Especialidad / Curso
+                            </span>
+                            <span className="inline-block ml-5 sm:ml-0">{certificacion.especialidad}
+                            </span>
+                        </div>
+                        <hr className="my-3 md:hidden"/>
+                    </td>
+                    <td className="grid grid-cols-1 p-2 md:border md:border-grey-500 text-left md:table-cell">
+                        <div className="flex flex-row items-center">
+                            <span className="inline-block w-1/3 md:hidden font-bold mr-10 sm:mr-0">
+                                Institución Emisora
+                            </span>
+                            <span className="inline-block ml-5 sm:ml-0">
+                                {certificacion.emisora}
+                            </span>
+                        </div>
+                        <hr className="my-3 md:hidden"/>
+                    </td>
+                    <td className="grid grid-cols-1 p-2 md:border md:border-grey-500 text-left md:table-cell">
+                        <div className="flex flex-row items-center">
+                            <span className="inline-block w-1/3 md:hidden font-bold mr-10 sm:mr-0">
+                                Institución Autorizada
+                            </span>
+                            <span className="inline-block ml-5 sm:ml-0">
+                                {certificacion.autorizada}
+                            </span>
+                        </div>
+                        <hr className="my-3 md:hidden"/>
+                    </td>
+                    <td className="grid grid-cols-1 p-2 md:border md:border-grey-500 text-left md:table-cell">
+                        <div className="flex flex-row items-center">
+                            <span className="inline-block w-1/3 md:hidden font-bold mr-10 sm:mr-0">
+                                Fecha de Emisión
+                            </span>
+                            <span className="inline-block ml-5 sm:ml-0">
+                                { certificacion.fechaEmision.toLocaleDateString('es-mx') }
+                            </span>
+                        </div>
+                        <hr className="my-3 md:hidden"/>
+                    </td>
+                    <td className="grid grid-cols-1 p-2 md:border md:border-grey-500 text-left md:table-cell">
+                        <div className="flex flex-row items-center">
+                            <span className="inline-block w-1/3 md:hidden font-bold mr-10 sm:mr-0">
+                                Folio
+                            </span>
+                            <span className="inline-block ml-5 sm:ml-0">
+                            {certificacion.folio}
+                            </span>
+                        </div>
+                    </td>
             </tr>     
         </>
     )

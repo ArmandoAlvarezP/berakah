@@ -52,7 +52,7 @@ export const BorrarAlumnoAlert = ({alumnos}: Props) => {
                             <h1 className="text-xl font-bold text-gray-500 px-8 mt-3 uppercase">¿Está seguro de eliminar al alumno: {nombre}?</h1>
                         </div>
                         
-                        <div className="p-3  mt-2 text-center space-x-4 md:block ">
+                        <div className="flex p-3  mt-2 text-center space-x-4 md:block justify-between">
                             <button className="mb-2 md:mb-0 cursor-pointer">
                                 <Image 
                                     onClick={onAccept}

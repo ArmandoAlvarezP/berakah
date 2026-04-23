@@ -89,9 +89,19 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
                             />
                         </div>
                     </div>
+                    <hr className="md:hidden my-3" />
                 </td>
-                <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">CURP</span>{alumno.curp}</td>
-                <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-full md:hidden font-bold mr-2 sm:mr-0">Tipo de Certificación</span>
+                <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+                    <span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">
+                        CURP
+                    </span>
+                    {alumno.curp}
+                    <hr className="md:hidden my-3" />
+                </td>
+                <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+                    <span className="inline-block w-full md:hidden font-bold mr-2 sm:mr-0">
+                        Tipo de Certificación
+                    </span>
                     <div className="flex flex-col">
 
                         {/* // TODO: hacer map de las certificaciones */}
@@ -120,6 +130,7 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
                             />
                         </div>
                     </div>
+                    <hr className="md:hidden my-3" />
                 </td>
                 <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Especialidad</span>
                     <div className="flex flex-row">
@@ -136,6 +147,7 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
                             }                                             
                         </ol>
                     </div>
+                    <hr className="md:hidden my-3" />
                 </td>
                 <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-full md:hidden font-bold mr-2 sm:mr-0">Institución Emisora</span>
                     <div className="flex flex-row">
@@ -152,6 +164,7 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
                             }                                                 
                         </ol>
                     </div>
+                    <hr className="md:hidden my-3" />
                 </td>
                 <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-full md:hidden font-bold mr-2 sm:mr-0">Institución Autorizada</span>
                     <div className="flex flex-row">
@@ -168,6 +181,7 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
                             }                          
                         </ol>
                     </div>
+                    <hr className="md:hidden my-3" />
                 </td>
                 <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span className="inline-block w-full md:hidden font-bold mr-2 sm:mr-0">Fecha de Emisión</span>
                     <div className="flex flex-row">
@@ -184,6 +198,7 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
                             }                             
                         </ol>
                     </div>
+                    <hr className="md:hidden my-3" />
                 </td>
                 <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">Folio</span>
