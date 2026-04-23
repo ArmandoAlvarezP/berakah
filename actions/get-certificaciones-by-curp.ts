@@ -13,7 +13,7 @@ export const getCertificacionesByCurp = async ({ curp }: Curp) => {
         // Obtener el elumno por la curp 
         const alumno = await prisma.alumno.findUnique({
             where: {
-                curp: curp
+                curp: 'AAPA940623HMNLRR04'
             }
         })
 
