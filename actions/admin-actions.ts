@@ -2,6 +2,7 @@
 
 import { prisma } from "@/app/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { getAlumnos } from "./get-alumnos";
 
 // Agregar Alumno
 
@@ -196,6 +197,34 @@ export const borrarAlumno = async ( id: number ) => {
     } catch (error) {
         console.log(error);
         throw new Error('Error al eliminar Alumno');
+    }
+
+}
+
+export const buscarAlumnoPorCurp = async ( curp: string ) => {
+
+    try {   
+        if( curp === '' ) {
+            const alumnos = await getAlumnos();
+            return alumnos;
+        }
+
+        const alumno = await prisma.alumno.findFirst({
+            where: { 
+                curp
+            }
+        })
+
+        //console.log( alumno );
+        //revalidatePath( '/admin/dashboard' );
+
+        if( alumno !== null ) {
+            return alumno
+        }
+    
+    } catch (error) {
+        console.log(error)
+        throw new Error('Error de busqueda');
     }
 
 }
