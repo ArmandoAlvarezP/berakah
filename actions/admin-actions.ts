@@ -201,21 +201,21 @@ export const borrarAlumno = async ( id: number ) => {
 
 }
 
-export const buscarAlumnoPorCurp = async ( curp: string ) => {
+export const buscarAlumnoPorCurp = async ( busqueda: string ) => {
 
     try {   
-        if( curp === '' ) {
+        if( busqueda === '' ) {
             const alumnos = await getAlumnos();
             return alumnos;
         }
 
-        const alumno = await prisma.alumno.findFirst({
+        const alumno = await prisma.alumno.findMany({
             where: { 
-                curp
+                OR: [ { curp: {contains: busqueda, mode: "insensitive"} }, { nombre: { contains: busqueda , mode: "insensitive"} } ]
             }
         })
 
-        //console.log( alumno );
+        console.log( alumno );
         //revalidatePath( '/admin/dashboard' );
 
         if( alumno !== null ) {

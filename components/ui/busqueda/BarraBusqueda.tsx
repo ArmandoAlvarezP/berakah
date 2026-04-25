@@ -14,9 +14,8 @@ export const BarraBusqueda = () => {
     const [errorMessage, setErrorMessage] = useState('');
 
     const setAlumno = useUIStore( state => state.setAlumno );
-    const alumno = useUIStore( state => state.alumno );
 
-    const { register, handleSubmit, formState: { errors }, reset } = useForm<Inputs>();
+    const { register, handleSubmit } = useForm<Inputs>();
 
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         setErrorMessage('');
@@ -25,7 +24,7 @@ export const BarraBusqueda = () => {
         // Server action
         const resp = await buscarAlumnoPorCurp( busqueda.toUpperCase() );
 
-        if (!resp) {
+        if (!resp || resp.length < 1) {
             setErrorMessage('Alumno No Encontrado');
             setTimeout(() => {
                 setErrorMessage('')
@@ -33,9 +32,9 @@ export const BarraBusqueda = () => {
             return;
         }
 
-        setAlumno(Array.isArray(resp) ? resp : [resp])
+        setAlumno(Array.isArray(resp) ? resp.filter(Boolean) : [resp]);
 
-        console.log(alumno);
+        //console.log(alumno);
     }
 
     return (
