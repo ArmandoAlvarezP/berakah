@@ -15,8 +15,8 @@ export default function LoginPage() {
 
                     <Image 
                         src="/index_alumnos.jpg" alt="Estudiantes" className="object-cover w-full h-full"
-                        height={400}
-                        width={600}
+                        height={1100}
+                        width={1080}
                     />
                 </div>
             

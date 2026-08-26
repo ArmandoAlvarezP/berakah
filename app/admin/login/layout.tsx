@@ -22,8 +22,8 @@ export default async function LoginAdminLayout({children}:
             
                                 <Image 
                                     src="/index_admin.jpg" alt="Administradores" className="object-cover w-full h-full"
-                                    height={400}
-                                    width={600}
+                                    height={1100}
+                                    width={1080}
                                 />
                             </div>
 

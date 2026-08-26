@@ -215,7 +215,7 @@ export const buscarAlumnoPorCurp = async ( busqueda: string ) => {
             }
         })
 
-        console.log( alumno );
+        //console.log( alumno );
         //revalidatePath( '/admin/dashboard' );
 
         if( alumno !== null ) {
