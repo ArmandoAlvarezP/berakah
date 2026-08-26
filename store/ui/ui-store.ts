@@ -1,4 +1,5 @@
 
+import { Alumno } from '@/interfaces';
 import { create } from 'zustand';
 
 interface State {
@@ -45,6 +46,11 @@ interface State {
 
     openBorrarCertificacionAlert: () => void;
     closeBorrarCertificacionAlert: () => void;
+
+    // Buscar alumno
+    alumno: Alumno[] | null;
+
+    setAlumno: ( alumno: Alumno[] | null ) => void;
 }
 
 export const useUIStore = create<State>()((set) => ({
@@ -90,4 +96,8 @@ export const useUIStore = create<State>()((set) => ({
 
     openBorrarCertificacionAlert: () => set({ isBorrarCertificacionAlertOpen: true }),
     closeBorrarCertificacionAlert: () => set({ isBorrarCertificacionAlertOpen: false }),
+
+    // Buscar Alumno
+    alumno: null,
+    setAlumno: ( alumno ) => set({ alumno })
 }));

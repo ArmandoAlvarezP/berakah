@@ -10,3 +10,4 @@ export * from './ui/modales/ModalEditarAlumno';
 export * from './ui/alerts/BorrarAlumnoAlert';
 export * from './ui/alerts/BorrarCertificacionAlert';
 export * from './ui/datos-alumnos/DatosAlumnos';
+export * from './ui/busqueda/BarraBusqueda';

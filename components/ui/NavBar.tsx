@@ -6,6 +6,7 @@ import { useUIStore } from "@/store";
 import { redirect } from "next/navigation";
 // import { auth } from "@/auth.config";
 import { logout } from "@/actions";
+import { BarraBusqueda } from '@/components';
 
 interface Props {
     title: string;
@@ -15,10 +16,10 @@ interface Props {
 
 export const NavBar = ({ title, welcome, extraButton }: Props) => {
 
-    const openModal = useUIStore( state => state.openModalAgregarAlumno );
+    const openModal = useUIStore(state => state.openModalAgregarAlumno);
 
-    const cerrarSesion = async () => {   
-        if( window.location.href.includes('perfil') ){
+    const cerrarSesion = async () => {
+        if (window.location.href.includes('perfil')) {
             redirect('/login');
         }
         await logout();
@@ -26,12 +27,12 @@ export const NavBar = ({ title, welcome, extraButton }: Props) => {
     }
 
     return (
-        <nav className=" grid grid-cols-2 sticky top-0 isolate mb-5">
-            
+        <nav className=" grid grid-cols-2 sticky top-0 isolate mb-5 sm:mb-10">
+
             {/* Fondo */}
-            <Image 
-                src="/header.jpg" 
-                alt="" 
+            <Image
+                src="/header.jpg"
+                alt=""
                 className="absolute inset-0 -z-10 w-full object-cover object-right md:object-center h-70"
                 width={900}
                 height={500}
@@ -49,27 +50,27 @@ export const NavBar = ({ title, welcome, extraButton }: Props) => {
                     className="m-5"
                 />
 
-                <h1 className="m-10 ml-3 sm:ml-10 mt-25 sm:mt-0 font-bold text-lg sm:text-5xl text-[#00795D] uppercase w-3/4" >{ title }</h1>
+                <h1 className="m-10 ml-3 sm:ml-10 mt-25 sm:mt-0 font-bold text-lg sm:text-5xl text-[#00795D] uppercase w-3/4" >{title}</h1>
 
             </div>
 
             <div className="flex flex-row justify-end">
-                
+
                 <div className="flex flex-col">
-                    
+
                     <h3 className={
                         clsx(
-                            "mb-3 mr-5 mt-5 text-[#00795D] font-bold uppercase",
+                            "mb-3 mr-10 mt-5 text-[#00795D] font-bold uppercase",
                             {
                                 "mr-0 ml-20 mt-5 text-right": extraButton
                             }
                         )
-                    }>{ welcome }</h3>
+                    }>{welcome}</h3>
 
-                    <Image 
+                    <Image
                         className={
                             clsx(
-                                "mb-20 mr-5 sm:ml-25 cursor-pointer",
+                                "mb-10 mr-5 sm:ml-25 cursor-pointer",
                                 {
                                     "ml-20 sm:ml-15": extraButton
                                 }
@@ -84,27 +85,32 @@ export const NavBar = ({ title, welcome, extraButton }: Props) => {
 
                     {
                         extraButton && (
-                            <Image 
-                                className={
-                                    clsx(
-                                        "mb-20 mr-5 sm:ml-25 cursor-pointer",
-                                        {
-                                            "ml-20 sm:ml-15": extraButton
-                                        }
-                                    )
-                                }   
-                                src={'/agregar_alumno.png'}
-                                alt="agregar alumno"
-                                width={150}
-                                height={30}
-                                onClick={ openModal }
-                            />
+                            <>
+                                <Image
+                                    className={
+                                        clsx(
+                                            "mb-5 mr-5 sm:ml-25 cursor-pointer",
+                                            {
+                                                "ml-20 sm:ml-15": extraButton
+                                            }
+                                        )
+                                    }
+                                    src={'/agregar_alumno.png'}
+                                    alt="agregar alumno"
+                                    width={150}
+                                    height={30}
+                                    onClick={openModal}
+                                    />
+
+                                {/* Barra de busqueda */}
+                                <BarraBusqueda />
+                            </>
                         )
                     }
 
                 </div>
-            </div>      
-            
+            </div>
+
         </nav>
     )
 }

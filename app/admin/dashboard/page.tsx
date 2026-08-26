@@ -12,7 +12,7 @@ export default async function AdminPage() {
         <>
             {/*  Tabla  */}
 
-            <div className="mx-5 mt-0 mb-10 w-auto">
+            <div className="flex mx-5 mt-0 mb-10 w-auto justify-center sm:mt-5">
 
                 <TablaAdmin  alumnos={alumnos} certificaciones={certificaciones}/>
 
