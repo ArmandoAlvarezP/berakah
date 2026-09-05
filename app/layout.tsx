@@ -8,7 +8,7 @@ export const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "Berakah Consorcio",
+  title: "Berakah Consultoría",
   description: "Berakah Consultoria para la Profesionalización SA de CV",
 };
 
