@@ -34,8 +34,8 @@ export const NavBar = ({ title, welcome, extraButton }: Props) => {
                 src="/header.jpg"
                 alt=""
                 className="absolute inset-0 -z-10 w-full object-cover object-right md:object-center h-70"
-                width={900}
-                height={500}
+                width={1920}
+                height={343}
                 loading='eager'
             />
             <div className="flex flex-col justify-between">
