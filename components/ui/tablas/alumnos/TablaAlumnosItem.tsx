@@ -1,4 +1,5 @@
 import { Certificacion } from "@/interfaces";
+import { formatFechaEmision } from "@/utils";
 import clsx from "clsx";
 
 interface Props {
@@ -68,7 +69,7 @@ export const TablaAlumnosItem = ({certificacion, index}: Props) => {
                                 Fecha de Emisión
                             </span>
                             <span className="inline-block ml-5 sm:ml-0">
-                                { certificacion.fechaEmision.toLocaleDateString('es-mx') }
+                                { formatFechaEmision(certificacion.fechaEmision) }
                             </span>
                         </div>
                         <hr className="my-3 md:hidden"/>

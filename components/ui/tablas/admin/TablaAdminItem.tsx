@@ -5,6 +5,7 @@ import { FaPlus } from "react-icons/fa"
 import { IoCloseOutline, IoTrashOutline } from "react-icons/io5"
 import { MdEdit } from "react-icons/md"
 import { Alumno, Certificacion } from '@/interfaces';
+import { formatFechaEmision } from '@/utils';
 import clsx from "clsx";
 
 // TODO: Obtener aquí toda la info de alumnos y certificaciones necesarias opara enviar a los modales
@@ -192,7 +193,7 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
                                         key={i}
                                         className="ml-5 list-decimal"
                                     >
-                                        {c?.fechaEmision.toLocaleDateString('es-mx')}
+                                        {formatFechaEmision(c.fechaEmision)}
                                     </li> 
                                 ))
                             }                             
