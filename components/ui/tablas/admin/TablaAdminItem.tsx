@@ -109,7 +109,7 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
                             {
                                 certificacionesPorAlumno.map( (c,i) => (
                                     <li 
-                                    className="ml-5 mb-3"
+                                    className="ml-5 mb-3 uppercase"
                                     key={i}         
                                     >
                                         <div className="flex justify-between">

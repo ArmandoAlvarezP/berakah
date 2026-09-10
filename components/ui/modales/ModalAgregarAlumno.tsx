@@ -125,6 +125,9 @@ export const ModalAgregarAlumno = () => {
                         <option value="Certificado de Especialización Profesional">
                             Certificado de Especialización Profesional
                         </option>
+                        <option value="Certificado Técnico">
+                            Certificado Técnico
+                        </option>
                     </select>
 
                     <label className='text-gray-400' >FECHA DE EMISIÓN</label>
