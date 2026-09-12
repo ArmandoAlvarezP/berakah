@@ -31,11 +31,11 @@ export const NavBar = ({ title, welcome, extraButton }: Props) => {
 
             {/* Fondo */}
             <Image
-                src="/header.jpg"
+                src="/banner1.png"
                 alt=""
                 className="absolute inset-0 -z-10 w-full object-cover object-right md:object-center h-70"
-                width={1920}
-                height={343}
+                width={6000}
+                height={4000}
                 loading='eager'
             />
             <div className="flex flex-col justify-between">
