@@ -25,7 +25,7 @@ export const LoginForm = () => {
                 <input 
                     type="text" 
                     id="curp" 
-                    placeholder="CURP"
+                    placeholder="CURP/ID OFICIAL"
                     className="w-full border border-gray-300 rounded-3xl py-2 px-3 focus:outline-none focus:border-blue-500" 
                     {...register("curp", { required: true} )}
                 />
