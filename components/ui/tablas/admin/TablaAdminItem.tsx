@@ -94,7 +94,7 @@ export const TablaAdminItem = ({alumno, certificaciones, index}: Props) => {
                 </td>
                 <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <span className="inline-block w-1/3 md:hidden font-bold mr-2 sm:mr-0">
-                        CURP
+                        CURP/ID Oficial
                     </span>
                     {alumno.curp}
                     <hr className="md:hidden my-3" />
